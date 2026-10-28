@@ -9,7 +9,7 @@
 <meta property="og:description" content="Systems, data, and applied AI. Interactive resume with a career timeline.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0b1220">
-<script>document.documentElement.className+=" js";</script>
+<script>document.documentElement.className+=" js";try{document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%232dd4bf'%3EKC%3C/text%3E%3C/svg%3E">
 <style>
 :root{
@@ -217,6 +217,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 @media (max-width:520px){.stats{grid-template-columns:1fr}.seg button{padding:5px 9px}.logo span{display:none}}
 @media print{
+  :root[data-theme],:root{--bg:#f6f7fb;--surface:#ffffff;--surface-2:#eef1f7;--text:#0f172a;--muted:#475569;--line:#d9deea;--accent:#0f766e;--accent-soft:#ccfbf1;--accent-ink:#ffffff}
   .nav,.hero::before,.hero::after,.grid-bg,.cta,.tools,.zoom,.filter-status,#skills-chips,.tl-scroll{display:none!important}
   html[data-view] .detail-only{display:block!important}
   body{background:#fff;color:#000}.hero{background:none;color:#000;padding:10px 0}.hero .lede,.hero .meta,.hero .tagline,.step span{color:#222}
