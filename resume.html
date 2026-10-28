@@ -212,6 +212,13 @@ html[data-view="simple"] .detail-only{display:none}
 .dd-live{font-size:12px;font-weight:700;padding:5px 11px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);border-radius:8px;text-decoration:none;margin-right:8px;white-space:nowrap}
 .dd-live:hover{filter:brightness(1.1)}
 .dd-foot{border-top:1px solid var(--line);margin-top:6px;padding:10px 12px 4px;font-size:13px;color:var(--muted)}
+@media (max-width:700px){
+  .dd{position:static}
+  .dd-menu{position:fixed;left:12px;right:12px;top:68px;width:auto;max-height:calc(100vh - 96px);overflow-y:auto}
+  .dd-item{flex-wrap:wrap}
+  .dd-item>a:first-child{flex:1 1 60%}
+  .dd-live{margin:0 12px 10px}
+}
 @media (max-width:520px){.dd-btn{padding:6px 10px}}
 
 footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
