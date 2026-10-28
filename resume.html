@@ -439,7 +439,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
     <article class="card org reveal" id="projects" style="margin-top:18px">
       <div class="org-top"><h3>Projects</h3><span class="dates"><a href="https://github.com/krisrchesney?tab=repositories" target="_blank" rel="noopener">All repositories on GitHub</a></span></div>
-      <p class="oneline" style="margin-left:0;margin-top:4px">Side projects. The machine learning ones test for data leakage and have to beat a simple baseline.</p>
+      <p class="oneline" style="margin-left:0;margin-top:4px">Projects I've built on my own time, from ranking new vulnerabilities to planning board game shelves. Open a card to see how each one works.</p>
       <div class="projects" style="margin-top:12px">
         <div class="proj" data-tags="ml data security"><details><summary>KEV Watch</summary>
           <p>Ranks newly published vulnerabilities by how likely they are to land in CISA's Known Exploited Vulnerabilities catalog within 90 days. It scores each CVE from what the publisher released, updates daily, and checks its ranking against EPSS. A gradient boosting model reached a ROC AUC of 0.87 on a held-out test set, and the write-up is plain about its limits: it was not better than EPSS at the very top of the list, and the test set had only 37 positive CVEs.</p>
