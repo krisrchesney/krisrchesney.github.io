@@ -190,6 +190,17 @@ html[data-view="simple"] .detail-only{display:none}
 
 
 
+
+/* Email dialog */
+.mailbox{position:fixed;inset:0;z-index:200;background:rgba(3,8,20,.62);display:grid;place-items:center;padding:16px}
+.mailbox[hidden]{display:none}
+.mailcard{position:relative;width:min(420px,100%);background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:22px 22px 20px}
+.mailcard h3{font-size:1.2rem;margin-bottom:8px}
+.mailaddr{font-weight:700;font-size:1.05rem;word-break:break-all;margin:0 0 14px;user-select:all}
+.mailbtns{display:flex;flex-wrap:wrap;gap:8px}
+.mailbtns button.abtn{cursor:pointer;font:inherit;font-weight:600}
+.mailx{position:absolute;right:10px;top:8px;border:0;background:none;font-size:26px;line-height:1;color:var(--muted);cursor:pointer}
+
 /* Project action buttons */
 .proj .actions{display:flex;flex-wrap:wrap;gap:8px;padding:2px 0 12px}
 .abtn{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent);transition:filter .15s,background .15s}
@@ -556,7 +567,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   /* Email, assembled in script to keep it out of plain-text scrapers */
   var mail=document.getElementById("mail");
-  mail.href="mai"+"lto:"+["kris.r.chesney","gmail.com"].join("@");
+  var MAIL_PARTS=["kris.r.chesney","gmail.com"];   /* change the address here (and in the PDF) */
+  var addr=MAIL_PARTS.join("@");
+  mail.href="mai"+"lto:"+addr;
+  /* A plain mailto link does nothing on computers with no mail app, so show every option. */
+  var box=document.createElement("div");
+  box.className="mailbox";box.hidden=true;box.setAttribute("role","dialog");box.setAttribute("aria-modal","true");box.setAttribute("aria-label","Email Kristopher");
+  box.innerHTML='<div class="mailcard"><button type="button" class="mailx" aria-label="Close">&times;</button>'
+    +'<h3>Email me</h3><p class="mailaddr" id="mailaddr"></p>'
+    +'<div class="mailbtns"><button type="button" class="abtn live" id="mailcopy">Copy address</button>'
+    +'<a class="abtn code" id="mailgmail" target="_blank" rel="noopener">Open in Gmail &#8599;</a>'
+    +'<a class="abtn code" id="mailapp">Open mail app</a></div></div>';
+  document.body.appendChild(box);
+  var mailaddr=box.querySelector("#mailaddr"),mailcopy=box.querySelector("#mailcopy");
+  mailaddr.textContent=addr;
+  box.querySelector("#mailgmail").href="https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(addr)+"&su="+encodeURIComponent("Hello from your resume site");
+  box.querySelector("#mailapp").href="mai"+"lto:"+addr;
+  function mailShow(v){box.hidden=!v;if(v){mailcopy.textContent="Copy address";mailcopy.focus()}else{mail.focus()}}
+  mail.addEventListener("click",function(e){e.preventDefault();mailShow(true)});
+  box.addEventListener("click",function(e){if(e.target===box)mailShow(false)});
+  box.querySelector(".mailx").addEventListener("click",function(){mailShow(false)});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!box.hidden)mailShow(false)});
+  mailcopy.addEventListener("click",function(){
+    function done(){mailcopy.textContent="Copied"}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(addr).then(done,function(){sel()})}else{sel()}
+    function sel(){var r=document.createRange();r.selectNodeContents(mailaddr);var g=window.getSelection();g.removeAllRanges();g.addRange(r);try{document.execCommand("copy");done()}catch(x){mailcopy.textContent="Press Ctrl+C"}}
+  });
 
   /* Simple / Detailed view */
   var details=[].slice.call(document.querySelectorAll("#experience details"));
