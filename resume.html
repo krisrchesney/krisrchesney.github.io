@@ -1,806 +1,303 @@
 <!doctype html>
-<html lang="en" data-view="simple">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kristopher Chesney | Technology Leader</title>
 <meta name="description" content="Technology leader with 20+ years across systems administration, security analytics, data science, and IT operations. Interactive resume and career timeline.">
 <meta property="og:title" content="Kristopher Chesney | Technology Leader">
 <meta property="og:description" content="Systems, data, and applied AI. Interactive resume with a career timeline.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0b1220">
-<script>document.documentElement.className+=" js";try{document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%232dd4bf'%3EKC%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0e141d">
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%232dd4bf'%3EKC%3C/text%3E%3C/svg%3E" rel="icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Figtree:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#f6f7fb; --surface:#ffffff; --surface-2:#eef1f7; --text:#0f172a; --muted:#475569; --line:#d9deea;
-  --accent:#0f766e; --accent-soft:#ccfbf1; --accent-ink:#ffffff;
-  --l-ent:#4f46e5; --l-sec:#0d9488; --l-sys:#d97706; --l-mil:#64748b; --l-edu:#0284c7;
-  --shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.06);
-  --hero-a:#0b1220; --hero-b:#13203a;
-  --radius:16px;
-}
-:root[data-theme="dark"]{
-  --bg:#0b1220; --surface:#111a2e; --surface-2:#172340; --text:#e8edf7; --muted:#9fb0cc; --line:#233253;
-  --accent:#2dd4bf; --accent-soft:#0f3b3a; --accent-ink:#04201e;
-  --l-ent:#818cf8; --l-sec:#2dd4bf; --l-sys:#fbbf24; --l-mil:#94a3b8; --l-edu:#38bdf8;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0b1220; --surface:#111a2e; --surface-2:#172340; --text:#e8edf7; --muted:#9fb0cc; --line:#233253;
-    --accent:#2dd4bf; --accent-soft:#0f3b3a; --accent-ink:#04201e;
-    --l-ent:#818cf8; --l-sec:#2dd4bf; --l-sys:#fbbf24; --l-mil:#94a3b8; --l-edu:#38bdf8;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
-  }
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--accent)}
-h1,h2,h3,h4{line-height:1.2;margin:0}
-p{margin:0 0 .75em}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
-button{font:inherit;color:inherit;cursor:pointer}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+:root{--bg:#f2f5f9;--ink:#18202e;--accent:#2c5cb4;--accent2:#c4762b;--muted:color-mix(in srgb,var(--ink) 58%,var(--bg));--rule:color-mix(in srgb,var(--ink) 15%,var(--bg));--panel:color-mix(in srgb,var(--ink) 5%,var(--bg))}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.65;transition:background .2s,color .2s}
+.hd,h1,h2,h3,.nav,.cta a,.tab,.chip{font-family:Figtree,system-ui,sans-serif}
+a{color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:3px;text-decoration-thickness:2px}a:hover{color:var(--accent)}
+.acc{color:var(--accent)}
+/* control bar */
+.ctl{position:static;background:var(--bg);border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:8px 8px;align-items:center;padding:9px 14px}
+.ctl .tabs{display:flex;gap:8px;flex-wrap:wrap}
+.ctl .tab{font:700 13px Figtree,sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:999px;padding:7px 14px;cursor:pointer}
+.ctl .tab[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.ctl .sp{margin-left:auto;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden}.seg button{font:700 12px Figtree,sans-serif;border:0;background:var(--bg);color:var(--ink);padding:6px 11px;cursor:pointer}.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.sw button{width:20px;height:20px;border-radius:50%;border:2px solid var(--bg);outline:1px solid var(--rule);padding:0;cursor:pointer;background:linear-gradient(135deg,var(--c1) 50%,var(--c2) 50%)}
+.ctl label{font:600 12px Figtree,sans-serif;color:var(--muted);display:flex;align-items:center;gap:5px}.ctl input[type=color]{width:26px;height:22px;border:0;padding:0;background:none;cursor:pointer}
+.mode{font:700 12px Figtree,sans-serif;border:1px solid var(--ink);background:var(--bg);color:var(--ink);padding:6px 10px;border-radius:4px;cursor:pointer}
+.sh{display:none}
+.opt{display:none}.opt.on{display:block}
+/* hero */
+.hero{position:relative;min-height:700px;border-bottom:1px solid var(--rule);overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.nav{position:sticky;top:0;z-index:70;background:var(--bg);display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 22px;padding:12px 28px;font-weight:600;font-size:14px;border-bottom:1px solid var(--rule)}.nav .nm{font-weight:800;font-size:16px;letter-spacing:.01em}.nmw{display:flex;align-items:center;gap:12px}.nmw .mode{width:30px;height:30px;padding:0;border-radius:50%;font-size:16px;line-height:1;border-color:var(--rule)}.nmw .mode:hover{border-color:var(--accent)}.ln2{display:flex;flex-wrap:wrap;gap:4px 20px}[id]{scroll-margin-top:64px}
+.nav a{color:var(--ink);text-decoration:none}.nav a:hover{color:var(--accent)}
+.center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:min(640px,88vw);z-index:2;pointer-events:none}.center *{pointer-events:auto}
+.center::before{content:"";position:absolute;inset:-40px -80px;background:radial-gradient(closest-side,color-mix(in srgb,var(--bg) 90%,transparent) 55%,transparent);z-index:-1;pointer-events:none}
+.logo{display:inline-block;font:800 15px Figtree,sans-serif;letter-spacing:.28em;margin-bottom:4px}
+.logo i{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid var(--ink);border-radius:50%;vertical-align:middle;margin:0 12px;font:800 14px Figtree,sans-serif;font-style:normal;letter-spacing:.02em;color:var(--accent2)}
+.center hr{width:90px;border:0;border-top:2px solid var(--ink);margin:14px auto 18px}
+h1{font-weight:800;font-size:38px;line-height:1.12;margin:0 0 14px;letter-spacing:-.01em}
+.center p{margin:0 0 20px;font-size:18px}
+.cta a{display:inline-block;font-weight:700;font-size:15px;padding:9px 20px;border:2px solid var(--accent);color:var(--accent);text-decoration:none;border-radius:6px;margin:0 4px 8px}
+.cta a.f{background:var(--accent);color:var(--bg)}.cta a:hover{opacity:.85}
+.tip{position:absolute;z-index:5;pointer-events:none;background:var(--bg);border:1px solid var(--ink);padding:9px 13px;font:500 13px/1.4 Figtree,system-ui,sans-serif;max-width:270px;opacity:0;box-shadow:0 4px 14px rgba(0,0,0,.12)}.tip b{display:block;font-size:14.5px}.tip span{color:var(--muted)}
+.plain{position:relative;padding:76px 0 34px;border-bottom:1px solid var(--rule)}.plain .nav{position:absolute}.plain .center{position:relative;left:auto;top:auto;transform:none;margin:0 auto}
+.panelwrap{max-width:1060px;margin:0 auto;padding:26px 20px 30px}
+.stage{border:1px solid var(--rule);border-radius:8px;background:var(--panel);padding:8px}.stage svg{display:block;width:100%;height:auto}.stage text{font-family:Figtree,system-ui,sans-serif}
+.detail{margin-top:12px;border-left:4px solid var(--accent2);padding:3px 0 3px 14px;min-height:64px;font-size:16px}.detail b{font:700 17px Figtree,sans-serif}.detail p{margin:2px 0 0;color:var(--muted)}
+.legend{display:flex;gap:16px;font:500 13px Figtree,sans-serif;color:var(--muted);margin:0 0 8px}.legend i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.chip{font-weight:600;font-size:13px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer;margin:0 6px 8px 0}.chip[aria-pressed=true]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:10px}
+.card{border:1px solid var(--rule);border-radius:8px;padding:12px 14px;background:var(--bg);transition:opacity .15s}.card.dim{opacity:.22}.card.hit{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.card b{font:700 16px Figtree,sans-serif;display:block}.card p{margin:2px 0 8px;color:var(--muted);font-size:15px;line-height:1.45}
+.tgs{display:flex;flex-wrap:wrap;gap:3px 10px}.tg{font:500 12px Figtree,sans-serif;color:var(--muted)}.tg.on{color:var(--accent);font-weight:700}
+/* sections */
+.w{max-width:1000px;margin:0 auto;padding:0 24px}.pj p,.org .intro,.role ul,.certs,.sub{max-width:800px}.wide{max-width:1000px;margin:0 auto;padding:0 24px}
+section{padding:56px 0 8px}
+h2{font-weight:800;font-size:30px;margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 22px}
+.meta,.when{font:500 13px Figtree,sans-serif;letter-spacing:.03em;color:var(--muted)}
+.zoom{display:flex;gap:8px;margin:0 0 12px}.zoom button{font:600 13px Figtree,sans-serif;padding:5px 12px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);border-radius:999px;cursor:pointer}.zoom button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tlwrap{overflow-x:auto;border:1px solid var(--rule);border-radius:8px;padding:10px 12px 6px;background:var(--panel)}.bar{cursor:default}.bar:hover{opacity:.8}.bar.sel{stroke:var(--ink);stroke-width:2}
+.tlcard{margin-top:14px;border-left:4px solid var(--accent);padding:6px 0 6px 16px;min-height:100px}.tlcard h3{font-size:19px;margin:0}.tlcard .m{color:var(--muted);font:500 14px Figtree,sans-serif;margin:2px 0 8px}.tlcard p{margin:0 0 8px}.tlcard ul{margin:0;padding-left:1.1em}.tlcard li{margin:.3em 0;font-size:16px}
+details>summary{cursor:pointer;list-style:none}details>summary::-webkit-details-marker{display:none}
+.r summary{display:flex;gap:22px;align-items:baseline;padding:12px 0;border-top:1px solid var(--rule)}.r .n{font:800 28px Figtree,sans-serif;min-width:116px;color:var(--accent)}.r .w{font-size:16.5px;max-width:none;padding:0;margin:0}
+.r summary::after,.role summary::after,.pj summary::after{content:"+";margin-left:auto;color:var(--accent2);font:700 18px Figtree,sans-serif}.r[open] summary::after,.role[open] summary::after,.pj[open] summary::after{content:"\2212"}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}.chips button{font:700 13px Figtree,sans-serif;border:1px solid var(--rule);background:var(--bg);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}.chips button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:16px 16px 14px;cursor:pointer;display:flex;flex-direction:column;gap:4px;transition:transform .15s,opacity .2s,border-color .15s}
+.card:hover,.card:focus-visible{transform:translateY(-2px);border-color:var(--accent);outline:none}.card.dim{opacity:.22}.card[aria-expanded=true]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.card .n{font:800 34px/1.1 Figtree,sans-serif;color:var(--accent)}.card b{font:700 14px Figtree,sans-serif}.card .lab{font-size:15px;line-height:1.4;color:var(--muted)}
+.viz{margin-top:auto;padding-top:10px}.viz .bar{display:flex;align-items:center;gap:8px;margin:4px 0;font:600 11px Figtree,sans-serif;color:var(--muted)}.viz .bar span{width:74px;flex:none}
+.viz .bar u{display:block;height:9px;border-radius:5px;width:var(--w);background:var(--rule);text-decoration:none}.viz .bar u.after{background:var(--accent2)}
+.viz .split{display:flex;gap:2px;height:12px}.viz .split i{border-radius:3px;background:var(--accent)}.viz .split i.s1{background:var(--accent2)}.viz .split i.s2{background:var(--muted)}.viz small{display:block;margin-top:6px;font:600 11px/1.4 Figtree,sans-serif;color:var(--muted)}
+.card .more{display:none;margin:8px 0 0;padding-top:10px;border-top:1px solid var(--rule);font-size:16px;line-height:1.55;color:var(--ink)}.card[aria-expanded=true] .more{display:block}
+.waffle{display:grid;grid-template-columns:repeat(20,1fr);gap:2px}.waffle i{aspect-ratio:1;border-radius:1px;background:var(--rule)}.waffle i.on{background:var(--accent2)}
+.days{display:grid;grid-template-columns:repeat(14,1fr);gap:3px}.days i{aspect-ratio:1;border-radius:2px;background:var(--rule)}.days i.on{background:var(--accent2)}
+.mi{margin-top:auto;padding-top:10px;font:700 12px Figtree,sans-serif;color:var(--accent2)}.mi i{font-style:normal;font-size:15px;vertical-align:-1px}.mi i::before{content:"+"}.card[aria-expanded=true] .mi i::before{content:"\2212"}
+.rdetail{margin-top:14px;border-left:4px solid var(--accent2);padding:6px 0 6px 16px;min-height:84px;font-size:17px;line-height:1.55}.rdetail b{font:800 18px Figtree,sans-serif}.rdetail p{margin:4px 0 0}.rdetail .meta{font-size:14px}
+/* variant 2: spotlight */
+.spot{display:grid;grid-template-columns:270px 1fr;gap:26px;align-items:stretch}
+.rail{display:flex;flex-direction:column;gap:6px}.rl{display:flex;gap:12px;align-items:baseline;text-align:left;border:1px solid var(--rule);background:var(--bg);color:var(--ink);border-radius:8px;padding:9px 12px;cursor:pointer;font:700 14px Figtree,sans-serif}
+.rl .n{font:800 20px Figtree,sans-serif;color:var(--accent);min-width:72px}.rl.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}.rl.on .n{color:var(--bg)}
+.sstage{border:1px solid var(--rule);border-radius:12px;background:var(--panel);padding:28px 32px;min-height:340px}.sp{display:none}.sp.on{display:flex;flex-direction:column;gap:6px}
+.sp .bn{font:800 84px/1 Figtree,sans-serif;color:var(--accent);letter-spacing:-.02em}.sp h3{font-size:22px;margin:4px 0 0}.sp .sl{margin:0;color:var(--muted);font-size:18px}
+.sp .viz{padding-top:18px;max-width:520px}.sp .viz .bar{font-size:13px;margin:7px 0}.sp .viz .bar span{width:110px}.sp .viz .bar u{height:16px;border-radius:8px}.sp .viz .split{height:20px}.sp .viz small{font-size:13px}
+.sp .st{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--rule);font-size:18px;max-width:640px}
+/* variant 3: ranked bars */
+.callouts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 18px}.co{border:1px solid var(--rule);border-radius:12px;background:var(--panel);padding:16px 20px}
+.co summary{display:flex;flex-direction:column;gap:2px}.co .n{font:800 48px/1.05 Figtree,sans-serif;color:var(--accent)}.co b{font:700 15px Figtree,sans-serif}.co .lab{color:var(--muted);font-size:16px}.co .viz{padding-top:12px}.co p{margin:12px 0 0;font-size:16.5px}
+.rank{border-top:1px solid var(--rule)}.rk summary{display:grid;grid-template-columns:76px 210px 1fr 18px;gap:14px;align-items:center;padding:11px 0}.rk summary::after{content:"+";color:var(--accent2);font:700 18px Figtree,sans-serif}.rk[open] summary::after{content:"\2212"}
+.rk .rn{font:800 24px Figtree,sans-serif;color:var(--accent)}.rk .rt{font:700 15px Figtree,sans-serif}.rk .rt small{display:block;font:500 13px Figtree,sans-serif;color:var(--muted)}
+.rk .rbar{height:14px;border-radius:7px;background:var(--rule);overflow:hidden}.rk .rbar u{display:block;height:100%;width:var(--w);background:var(--accent);border-radius:7px;text-decoration:none}.rk:nth-child(even) .rbar u{background:var(--accent2)}
+.rk p{margin:0 0 14px 90px;color:var(--muted);font-size:16.5px}
+/* timelines: shared lane colors */
+.l-ent{--c:var(--accent)}.l-sec{--c:var(--accent2)}.l-sys,.l-mil{--c:var(--muted)}.l-edu{--c:var(--ink)}
+/* variant 2 timeline: career ladder */
+.lg{display:grid;grid-template-columns:230px 1fr;gap:10px 26px;padding:18px 0;border-top:1px solid var(--rule)}.lgh b{display:block;font:800 19px Figtree,sans-serif}.lgh span{font:500 13px Figtree,sans-serif;color:var(--muted)}
+.lg ol{list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid var(--rule)}.lg li{position:relative;padding:2px 0 14px 8px;cursor:pointer}.lg li:last-child{padding-bottom:0}
+.lg li::before{content:"";position:absolute;left:-30.5px;top:9px;width:14px;height:14px;border-radius:50%;background:var(--c);border:3px solid var(--bg)}.lg li:hover b{color:var(--accent)}
+.lg li b{font:700 16.5px Figtree,sans-serif}.lg li .dt{font:500 13px Figtree,sans-serif;color:var(--muted);margin-left:8px}.lg li p{margin:2px 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+/* variant 3 timeline: chapter strip */
+.chap{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 2px 14px}.ch{flex:0 0 250px;scroll-snap-align:start;border:1px solid var(--rule);border-top:6px solid var(--c);border-radius:10px;background:var(--panel);padding:14px 16px;cursor:pointer;display:flex;flex-direction:column;gap:3px}
+.ch:hover{border-color:var(--c)}.ch .yr{font:800 22px Figtree,sans-serif;letter-spacing:-.01em}.ch .og{font:700 14px Figtree,sans-serif}.ch ul{margin:6px 0 0;padding-left:1.1em;font-size:14.5px;line-height:1.4;color:var(--muted)}.ch .du{margin-top:auto;padding-top:12px;font:600 12px Figtree,sans-serif;color:var(--muted)}.ch .du u{display:block;height:6px;border-radius:3px;background:var(--c);margin-top:4px;width:var(--w);text-decoration:none}
+.l-edu.ch{border-style:dashed;border-top-style:solid}
+/* projects */
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:stretch}.pc{border:1px solid var(--rule);border-radius:10px;padding:16px 18px;background:var(--panel);display:flex;flex-direction:column;gap:8px}.pc h3{font-size:19px;margin:0}.pc p{margin:0;font-size:16px;color:var(--muted);line-height:1.55}.pc .lk{margin-top:auto;padding-top:6px}.pc .lk a{margin-right:14px;font:700 14px Figtree,sans-serif}
+.tg2{display:flex;flex-wrap:wrap;gap:5px}.tg2 span{font:600 11.5px Figtree,sans-serif;border:1px solid var(--rule);border-radius:999px;padding:2px 9px;color:var(--muted);background:var(--bg)}
+.prow{display:grid;grid-template-columns:64px 1fr 220px;gap:20px;align-items:start;padding:20px 0;border-top:1px solid var(--rule)}.prow .ix{font:800 40px/1 Figtree,sans-serif;color:var(--accent2)}.prow h3{font-size:21px;margin:0 0 4px}.prow p{margin:0;color:var(--muted);font-size:16.5px}.prow .lk a{display:block;font:700 14px Figtree,sans-serif;margin:0 0 4px}
+@media(max-width:900px){.pg{grid-template-columns:repeat(2,1fr)}.spot{grid-template-columns:1fr}.rail{flex-direction:row;overflow-x:auto}.rl{flex:0 0 auto}}
+@media(max-width:700px){.pg{grid-template-columns:1fr}.callouts{grid-template-columns:1fr}.rk summary{grid-template-columns:62px 1fr 18px}.rk .rbar{grid-column:1 / 3;grid-row:2}.rk p{margin-left:0}.lg{grid-template-columns:1fr}.prow{grid-template-columns:44px 1fr}.prow .lk{grid-column:2}.sp .bn{font-size:60px}.sstage{padding:20px}}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.cards{grid-template-columns:1fr}.card[aria-expanded=true]{grid-column:auto}}
+.org{margin:0 0 38px}.org header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 18px;border-bottom:1px solid var(--rule);padding-bottom:8px}.org h3{font-size:24px;margin:0}.intro{margin:14px 0 8px}
+.role{border-bottom:1px solid var(--rule)}.role summary{display:grid;grid-template-columns:140px 1fr 18px;gap:16px;padding:13px 0;align-items:baseline}.rt{font-size:17px}.role ul{margin:0 0 14px;padding-left:172px}.role li{margin:.45em 0}
+.role-t{font:700 15px Figtree,sans-serif;margin:14px 0 2px}.pj ul{margin:6px 0 4px;padding-left:1.1em;color:var(--muted)}.pj li{margin:.3em 0;font-size:16px}
+.tlbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 10px}.tlbar .zoom{margin:0}
+.tllist{list-style:none;margin:0;padding:0}.tllist[hidden]{display:none}.tllist li{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:baseline;padding:13px 0;border-top:1px solid var(--rule);cursor:pointer}.tllist li:hover b{color:var(--accent)}
+.tllist .d{font:500 13px Figtree,sans-serif;color:var(--muted)}.tllist b{font:700 16.5px Figtree,sans-serif}.tllist .o{color:var(--muted);font:500 14px Figtree,sans-serif}.tllist p{margin:3px 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}.tllist .go{font:700 13px Figtree,sans-serif;color:var(--accent);white-space:nowrap}
+#tltip{position:fixed;z-index:90;pointer-events:none;background:var(--bg);border:1px solid var(--ink);padding:10px 14px;max-width:310px;font:500 13px/1.45 Figtree,system-ui,sans-serif;opacity:0;box-shadow:0 4px 14px rgba(0,0,0,.14)}#tltip b{display:block;font-size:14.5px}#tltip span{color:var(--muted);display:block}#tltip p{margin:4px 0 0}#tltip em{display:block;margin-top:5px;color:var(--accent);font-style:normal;font-weight:700}
+.sec2.big{font-size:16px;color:var(--ink);margin-top:34px}.sec2{font:700 12px Figtree,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin:26px 0 4px}
+.earlier{list-style:none;margin:0;padding:0}.earlier li{display:grid;grid-template-columns:140px 1fr;gap:16px;padding:11px 0;border-top:1px solid var(--rule)}.earlier p{margin:2px 0 0;color:var(--muted)}
+.pj{border-top:1px solid var(--rule);padding:14px 0}.pj summary{display:flex;gap:16px;align-items:baseline}.pj summary::after{margin-left:0;width:16px;text-align:right}.pn{font:700 19px Figtree,sans-serif}.tags{font:500 12px Figtree,sans-serif;color:var(--muted);margin-left:auto;margin-right:12px}
+.pj p{margin:10px 0 0;font-size:16.5px;color:var(--muted)}.pj .lk a{margin-right:16px;color:var(--ink)}
+dl{display:grid;grid-template-columns:140px 1fr;gap:6px 20px;font-size:16.5px}dt{font:700 14px Figtree,sans-serif}dd{margin:0 0 10px;color:var(--muted)}
+.certs{color:var(--muted);padding-left:1.1em}
+footer{margin:60px 0 50px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:15px}
+@media(max-width:1099px){h1{font-size:32px}.center p{font-size:16.5px}.center{width:min(560px,70vw)}}
+@media(max-width:759px){.hero .center{width:92vw}.hero{min-height:0;padding:64px 0 40px}}
+@media(max-width:759px){.ctl{position:static;flex-direction:column;align-items:stretch;gap:6px;padding:8px 10px}.ctl>*{min-width:0;max-width:100%}.ctl .tabs,.ctl .sp{display:flex;gap:6px;overflow-x:auto;white-space:nowrap;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:2px}.ctl .sp{margin-left:0}.ctl .tab{flex:0 0 auto;min-height:36px;padding:7px 14px}.ln{display:none}.sh{display:inline}.ctl .seg,.ctl .sw,.ctl label,.ctl .mode{flex:0 0 auto}.sw button{width:26px;height:26px}.seg button,.mode{min-height:34px}}
+@media(max-width:700px){.tllist li{grid-template-columns:1fr}.tllist .go{justify-self:start}h1{font-size:30px}.role summary{grid-template-columns:1fr 18px}.role summary .when{grid-column:1}.role summary .rt{grid-column:1}.role ul{padding-left:1.1em}.r .more{margin-left:0}.earlier li,dl{grid-template-columns:1fr}.tags{display:none}.nav{padding:10px 16px;gap:2px 16px;font-size:13px}.ln2{gap:2px 14px}}
+.gs{display:inline-flex;align-items:center;gap:6px;margin-right:8px}.gs em{font:700 11px Figtree,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-style:normal}
+[data-g][data-v]{display:none}
+/* experience: company and role names in the secondary color */
+.org h3{color:var(--accent2)}.rt{color:var(--accent2);font-weight:600}.eg .pn,.eg .role-t{color:var(--accent2)}
+/* the network on its own, with a legend in the middle */
+.netsec{position:relative;height:760px;border-bottom:1px solid var(--rule);overflow:hidden}
+.netsec canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0}
+.nlg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;font:700 15px/1.2 Figtree,system-ui,sans-serif;text-shadow:0 0 3px var(--bg),0 0 6px var(--bg),0 0 10px var(--bg),0 0 14px var(--bg)}
+.nlg::before{content:"";position:absolute;inset:-90px -150px;background:radial-gradient(closest-side,color-mix(in srgb,var(--bg) 88%,transparent) 50%,transparent);z-index:-1;pointer-events:none}
+.nlg p{display:flex;gap:14px;align-items:center;margin:0 0 14px;min-width:170px}
+.k{flex:none;width:30px;display:flex;justify-content:center;position:relative}.k::before{content:"";display:block}
+.k-role::before{width:18px;height:18px;border-radius:50%;background:var(--accent2)}.k-proj::before{width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--ink)}.k-skill::before{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+.k-link::before{width:30px;height:2px;background:color-mix(in srgb,var(--ink) 35%,transparent);margin:8px 0}.k-link::after{content:"";position:absolute;top:50%;left:0;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--accent2);box-shadow:0 0 8px var(--accent2);animation:klink 2.4s ease-in-out infinite}
+@keyframes klink{0%{left:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:23px;opacity:0}}@media(prefers-reduced-motion:reduce){.k-link::after{animation:none;left:11px}}
+@media(max-width:759px){.netsec{height:auto;padding:40px 16px}.netsec canvas{display:none}.nlg{position:relative;left:auto;top:auto;transform:none;margin:0 auto}}
+</style></head><body data-h="1" data-i="1" data-t="1" data-p="1">
 
-/* Nav */
-.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;gap:14px;height:60px}
-.logo{font-weight:800;letter-spacing:.04em;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:8px}
-.logo b{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--hero-a);color:#2dd4bf;font-size:13px}
-.links{display:flex;gap:2px;margin-left:10px;overflow-x:auto;scrollbar-width:none}
-.links a{padding:8px 11px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:14px;white-space:nowrap}
-.links a:hover,.links a.on{background:var(--surface-2);color:var(--text)}
-.tools{margin-left:auto;display:flex;align-items:center;gap:8px}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:3px}
-.seg button{border:0;background:none;padding:5px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
-.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);font-weight:600}
-.icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center}
+<nav class="nav"><span class="nmw"><a class="nm" href="#top">Kristopher Chesney</a><button class="mode" id="mode" type="button"></button></span><span class="ln2"><a href="#top">Summary</a><a href="#results">Impact Results</a><a href="#timeline">Timeline</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a></span></nav><header class="hero" id="top"><canvas id="net" aria-label="Interactive map of roles, projects and tools"></canvas><div class="center"><span class="logo">KRISTOPHER<i>KC</i>CHESNEY</span><hr>
+<h1>Technology Leader<br><span class="acc">Systems, Data, and Applied AI</span></h1>
+<p>Technology leader with 20+ years across data science, security analytics, IT operations and systems administration. Leads teams and delivers work across the stack, from infrastructure and identity to data and analytics. Proficient at building code and developing workflows using AI tools. Excels at setting and executing strategy.</p>
+<div class="cta"><a class="f" href="Kristopher-Chesney-Resume.pdf" download data-goatcounter-click="click-pdf" data-goatcounter-title="Download PDF">Download resume</a><a href="#projects" data-goatcounter-click="click-projects" data-goatcounter-title="Projects button">Projects</a><a href="https://www.linkedin.com/in/kristopher-chesney-88464880" target="_blank" rel="noopener" data-goatcounter-click="click-linkedin" data-goatcounter-title="LinkedIn">LinkedIn</a><a href="https://github.com/krisrchesney" target="_blank" rel="noopener" data-goatcounter-click="click-github" data-goatcounter-title="GitHub">GitHub</a><a href="#contact" class="mail" data-goatcounter-click="click-email" data-goatcounter-title="Email me">Email</a></div></div><div class="tip" id="tip"></div></header>
+<div class="netsec" id="netsec"><canvas id="net2" aria-label="Map of my roles, projects and the tools they use"></canvas>
+<div class="nlg" id="lgbox">
+<p><i class="k k-role"></i>Company</p>
+<p><i class="k k-proj"></i>Project</p>
+<p><i class="k k-skill"></i>Skill or tool</p>
+<p><i class="k k-link"></i>Used in</p></div>
+<div class="tip" id="tip2"></div></div>
+<div class="wide" id="body"><section id="results"><h2>Impact Results</h2><p class="sub">Eight outcomes. Filter by theme, and open a card for more info.</p><div class="chips" id="rchips"><button aria-pressed="true" data-f="">All</button><button aria-pressed="false" data-f="cost">Cost</button><button aria-pressed="false" data-f="ai">AI</button><button aria-pressed="false" data-f="speed">Speed</button><button aria-pressed="false" data-f="sec">Security</button></div><div class="cards" id="rcards"><article class="card" data-t="cost" tabindex="0" role="button" aria-expanded="false"><span class="n">$200K</span><b>Cost savings</b><span class="lab">Saved in one fiscal year.</span><span class="mi">More info <i></i></span><p class="more">$150K from moving Customer Support from a vendor to an in-house team (outside vendor cost against internal cost), $38K from software consolidation, and $15K from smaller projects. Larger savings are projected each year after.</p></article><article class="card" data-t="ai" tabindex="0" role="button" aria-expanded="false"><span class="n">25%</span><b>AI ticket triage</b><span class="lab">Faster resolution for support tickets.</span><span class="mi">More info <i></i></span><p class="more">A Claude-based triage tool, integrated with HubSpot, pulls every unowned ticket, scores sentiment, finds answers in FAQs and runbooks, and drafts replies. It works on text tickets and transcribed calls, and makes the queue much easier to manage. Measured from live data, from before launch through the first month.</p></article><article class="card" data-t="ai speed" tabindex="0" role="button" aria-expanded="false"><span class="n">30%</span><b>HubSpot customer support</b><span class="lab">Fewer incoming tickets to handle.</span><span class="mi">More info <i></i></span><p class="more">Claude analyzed historic tickets to find trends and clusters. Roughly 20 HubSpot workflows, intake forms, and spam filtering were then built through its API, with Zoom Phone connected. They filter spam, send auto replies, and reroute misdirected requests to the right teams. Measured from live data, from before launch through the first month.</p></article><article class="card" data-t="speed" tabindex="0" role="button" aria-expanded="false"><span class="n">4 days</span><b>Microsoft 365 audit</b><span class="lab">For a full audit, instead of 4 weeks.</span><span class="mi">More info <i></i></span><p class="more">Audited the full environment against best practice and wrote a remediation plan, with Claude helping build and check the analysis.</p></article><article class="card" data-t="cost speed" tabindex="0" role="button" aria-expanded="false"><span class="n">50%</span><b>IT service department</b><span class="lab">Leaner IT team, faster responses, satisfaction held.</span><span class="mi">More info <i></i></span><p class="more">Restructured the IT service department and its workflow so a team half the size could support roughly 200 staff. Response times reduced, the backlog shrunk, and client satisfaction was maintained. It came from fixing processes, removing wasted work, and coaching the team.</p></article><article class="card" data-t="speed" tabindex="0" role="button" aria-expanded="false"><span class="n">85%</span><b>NetSuite migration</b><span class="lab">Faster file mapping and validation.</span><span class="mi">More info <i></i></span><p class="more">Built a tool for a NetSuite version migration that cut file mapping and validation time with increased accuracy. The migration was completed.</p></article><article class="card" data-t="ai sec" tabindex="0" role="button" aria-expanded="false"><span class="n">24%</span><b>Proficio</b><span class="lab">Less time per analyst investigation.</span><span class="mi">More info <i></i></span><p class="more">Researched and set up AI that automatically researches security alerts, then evaluated it in an A/B test: analyst investigation time dropped 24%. The result fed product roadmap decisions.</p></article><article class="card" data-t="cost sec" tabindex="0" role="button" aria-expanded="false"><span class="n">26%</span><b>Proficio</b><span class="lab">Less log volume, lower cost.</span><span class="mi">More info <i></i></span><p class="more">A data cleaning strategy reduced log volume and lowered cost. Patent pending on the platform&#x27;s multi-client ML architecture.</p></article></div></section></div>
+<div class="wide"><section id="timeline"><h2>Timeline</h2><p class="sub">Where each role sits in time. Hover a bar for the summary.</p><div class="tlbar"><span class="zoom" id="zoom"><button aria-pressed="true" data-r="2005,2027">Full career</button><button aria-pressed="false" data-r="2017,2027">Since 2017</button><button aria-pressed="false" data-r="2024.6,2027">Augustine</button></span></div><div class="tlwrap" id="tlchart"><svg id="tl" width="100%" role="img" aria-label="Career timeline"></svg></div></section></div>
+<div class="w">
+<section id="experience"><h2>Experience</h2><article class="org" id="augustine"><header><h3>Augustine Institute</h3><span class="meta">Florissant, MO · Apr 2025 – Oct 2026</span></header><p class=intro>Managed the data science, systems administration, and IT support teams that supported 200+ staff, reporting to the VP of Technology. Owned cross-department projects, including moving Customer Support from a vendor to an in-house team, a Microsoft 365 audit and remediation plan, an Active Directory rebuild, an audit of the event planning systems (Oracle Opera, Delphi, iHotelier), and software consolidation that saved $200K.</p><details class="role" id="r-sr-manager" open><summary><span class="when">Oct 2026</span><span class="rt">Sr. Manager, Enterprise Technology</span></summary><ul><li>Led the core team of four: a program manager, a data scientist, a systems administrator, and an IT lead. The team covered data science, systems administration, and tech support, alongside the technology initiatives already underway.</li><li>Designed a single sign-on (SSO) plan across Microsoft Entra and other platforms that met cyber insurance requirements without overloading users with MFA prompts, making the environment both more secure and easier to use.</li><li>Developed and prototyped several website redesigns to add functionality, using Claude.</li></ul></details><details class="role" id="r-manager"><summary><span class="when">Jan 2026 – Oct 2026</span><span class="rt">Manager, Technology Services</span></summary><ul><li>Ran the IT service desk for the whole organization and kept up the dashboards, ETLs, and data connections built as Data Engineer.</li><li>Restructured the IT service department and workflow to allow for IT staff reduction by 50% while response times reduced, backlog shrunk, and client satisfaction was maintained for roughly 200 staff. Got there by fixing processes, removing wasted work, and coaching the team on troubleshooting and customer service.</li><li>Saved $200K in one fiscal year: $150K from moving Customer Support in-house, $38K from software consolidation, and $15K from smaller projects. Larger savings are projected each year after.</li><li>Became the Tech Help service owner and lead technician in February 2026 and moved the help desk from NinjaOne to Jira. Closed 161 Tech Help requests in about nine months, half of them within 4 days, while running the service desk.</li><li>Rebuilt the Active Directory structure to match the company&#x27;s org structure (August 2026), enabled Hybrid Entra Join phase 1, and audited every Active Directory and Entra user and device.</li><li>Configured HubSpot Service Desk in a sandbox and took it live on Sept 15, 2026, then built the Zoom Phone call tree and the shared mailbox rules that feed it.</li><li>Verified the company&#x27;s Atlassian domain, disabled 60 unused Zoom accounts, and set up Teams webinars and Webflow user management.</li><li>First responder on phishing and security reports. Handled vendor and license administration, including the Apple Developer membership renewal, and Claude seats and spend. Created the Claude Team account (June 2026), replacing Claude Enterprise.</li><li>Audited the event planning systems (Oracle Opera, Delphi, iHotelier) to understand how each area works, managed users, configured settings, and updated and monitored their APIs and data pipelines.</li><li>Managed web domains in Hover, with DNS and redirects on AWS (Route 53, CloudFront), and handled website cleanup mostly in Webflow.</li><li>Took on larger projects as the role grew: full Microsoft 365 audits, reviews of other platforms, and plans for consolidating and changing them.</li><li>Built tools with the teams that would use them and trained those teams to use them.</li><li>Forecasted IT ticket volume, Customer Support call and email volume, and budget spend by department, vendor, and product. Budget forecasts were built in Domo.</li><li>Wrote the requirements, epics, and user stories in Jira that the team worked from, for the HubSpot conversion, the Microsoft 365 audit, and the MFA project.</li><li>Supported about 60 Apple devices and set up Apple School Manager with device enrollment and Managed Apple Accounts.</li></ul></details><details class="role" id="r-data-engineer"><summary><span class="when">Apr 2025 – Jan 2026</span><span class="rt">Data Engineer</span></summary><ul><li>Hired part-time in April 2025 and moved to full-time on July 1. Supported data analytics across the company with dashboards, ETL pipelines, and data connections.</li><li>Used Domo for ETL and visualization, and Twilio Segment, PostgreSQL, and Athena for ETL and the data lake. Automated some workflows with n8n and Zapier.</li><li>Built a tool for a NetSuite version migration that cut file mapping and validation time by 85% with increased accuracy. The migration was completed.</li><li>Rebuilt the All Parish Query (June to July 2025), an aggregated table from multiple data sources showing each parish&#x27;s subscription status, payments, and other metrics, then added territories and kept it updated.</li><li>Built Domo dashboards for sales, territory, and revenue, a quarterly expense report, and short-course dashboards. Produced audience lists and engagement analytics on request for events and the content platform.</li><li>Ran the organization&#x27;s objectives and key results (OKR) tracking on my own from July 2025.</li><li>Fixed Salesforce and HubSpot data (address cleanup, contact owners) and built a Domo write-back to Salesforce.</li><li>Built a help desk dashboard from NinjaOne data (August 2025) and set up alerting and proactive monitoring for web and streaming platforms.</li><li>Wrote the department&#x27;s Data Governance Policy and Data Template Guidance (September 2025).</li></ul></details></article><article class="org" id="proficio"><header><h3>Proficio, Inc.</h3><span class="meta">Carlsbad, CA (Remote) · May 2018 – Aug 2024</span></header><p class=intro>Promoted four times in six years, from analyst to Data Science Manager. Led data science for the machine learning behind a managed security service that monitors many clients at once. Patent pending on its multi-client ML architecture.</p><details class="role" id="r-dsm"><summary><span class="when">Apr 2022 – Aug 2024</span><span class="rt">Data Science Manager (Remote)</span></summary><ul><li>Led data science for the machine learning behind a managed security service that monitors many clients at once, and built and maintained the ML models and alerts in Elastic.</li><li>Built ML alerts that correlated multiple anomalies for higher-fidelity detection, and added ML anomaly enrichment to rule-based alerts through FortiSOAR.</li><li>Researched and set up AI that automatically researches security alerts, then evaluated it in an A/B test: analyst investigation time dropped 24%, which fed product roadmap decisions. The test ran in the Elastic alert platform.</li><li>Cut ingested log volume 26% with a data cleaning strategy, which lowered cost.</li><li>Set up cross-department analytics reporting with automated pipelines from several platforms into Power BI.</li><li>Wrote the requirements, epics, and user stories in Jira for the team&#x27;s major work, and worked in Agile sprints with a scrum master for the last three years, running the sprint ceremonies when the scrum master was out.</li><li>Patent pending on the platform&#x27;s multi-client machine learning architecture.</li></ul></details><details class="role" id="r-datascientist"><summary><span class="when">Jan 2021 – Apr 2022</span><span class="rt">Strategic Data Scientist</span></summary><ul><li>Designed unsupervised ML models for anomaly detection in Elastic, and built data visualizations and reports for threat hunting and investigation teams.</li><li>Worked across teams to define and build data enrichment pipelines.</li></ul></details><details class="role" id="r-usecase"><summary><span class="when">Dec 2019 – Jan 2021</span><span class="rt">Strategic Use Case Architect</span></summary><ul><li>Analyzed security logs and researched attack techniques to build multi-tenant and client-specific alerts. Alerts analyzed in Elastic were sent to ServiceNow as tickets.</li><li>Led a project to standardize data ingestion from disparate sources.</li></ul></details><details class="role" id="r-cyber"><summary><span class="when">May 2018 – Dec 2019</span><span class="rt">Cybersecurity Content Development Engineer and Cybersecurity Analyst</span></summary><ul><li>Triaged security incidents across a multi-tenant environment.</li></ul></details></article><h4 class="sec2 big">Earlier roles</h4><div class="eg"><details class="pj" id="role-reu"><summary><span class="pn">BIGDatA REU, New Mexico State University</span><span class="tags">May – Aug 2017</span></summary><h4 class="role-t">BIGDatA REU <span class="meta">May – Aug 2017</span></h4><p>Research internship analyzing the reliability of large storage systems.</p><ul><li>Python in Jupyter with NumPy, Pandas, Seaborn, and scikit-learn</li></ul></details><details class="pj" id="role-tmd"><summary><span class="pn">TechMD, Costa Mesa, CA</span><span class="tags">Sep 2014 – Aug 2015</span></summary><h4 class="role-t">Systems Analyst II <span class="meta">Sep 2014 – Aug 2015</span></h4><p>Assessed the IT needs of small and mid-sized business clients and delivered the solutions.</p><ul><li>Mostly Windows-based work: networks, hardware, and heavy Microsoft 365 support</li><li>Wrote documentation and helped define a new organizational structure</li><li>Apple Support certification (2014)</li></ul></details><details class="pj" id="role-tcl"><summary><span class="pn">TheCloudLounge, Auckland, NZ</span><span class="tags">Sep 2013 – Aug 2014</span></summary><h4 class="role-t">Technical Consultant <span class="meta">Sep 2013 – Aug 2014</span></h4><p>Implemented cloud point-of-sale systems and led support.</p><ul><li>Rolled out to about 8 clients and supported about twice that</li><li>Led one support person; phone, email, and on-site hardware and software support, many iPads</li><li>Trained clients on the software and hardware</li></ul></details><details class="pj" id="role-pmcu"><summary><span class="pn">Pacific Marine Credit Union, Oceanside, CA</span><span class="tags">Sep 2007 – Aug 2013</span></summary><h4 class="role-t">Systems Administrator <span class="meta">Feb 2011 – Aug 2013</span></h4><p>Managed servers and backups and gave Windows support across the organization.</p><ul><li>Moved from PC Technician into systems administration</li><li>About 8 branches and 250+ staff</li><li>Rolled out application security and user automation programs</li></ul><h4 class="role-t">PC Technician <span class="meta">Sep 2007 – Feb 2011</span></h4><p>Desktop and Windows support for the whole organization.</p><ul><li>Started in IT support at a credit union in Oceanside, CA</li></ul></details><details class="pj" id="role-usmc"><summary><span class="pn">USMC Reserves, Miramar, CA</span><span class="tags">Aug 2005 – Aug 2011</span></summary><h4 class="role-t">Aviation Logistics Information Systems Specialist <span class="meta">Aug 2005 – Aug 2011</span></h4><p>Computer and network maintenance on the air base.</p><ul><li>Led a team of 6 to 8 Marines</li><li>Aviation supply network systems and their backups</li><li>Held a Secret clearance (not current)</li></ul></details></div></section></div>
+<div class="wide"><section id="projects"><h2>Projects</h2><p class="sub">Built on my own time. Open one for the live page and the code.</p><div class="w2"><details class="pj" id="proj-pay"><summary><span class="pn">Payments Ops Analyst</span><span class="tags">Databricks · PySpark · Claude Code · Evaluation</span></summary><p>A personal project on simulated card payment data, not production or employer work. I used Claude Code to assist in development: I set the requirements and product decisions, guided the build, reviewed and approved the code, and ran the deployments and tests. It includes a formal test of an AI agent that investigates payment incidents. The pass/fail rules were written before any run, with 4 questions run 3 times each, and every answer was graded against an answer key and rechecked with SQL. The results are published with the failures: 8 of 12 runs passed. When a question pointed at the problem, the agent found the true cause and the right document in 9 of 9 runs, but 2 of those answers had a wrong figure. With no hint, 1 of 3 runs found all three planted incidents, which is why automatic detection is next. The data, documents, and questions are mine and the sample is small, so 8 of 12 is not an accuracy rate. Monitoring and alerts are planned, not built.</p><p class="lk"><a href="https://krisrchesney.github.io/payments-ops-analyst/" target="_blank" rel="noopener">Open project page &#8599;</a><a href="https://github.com/krisrchesney/payments-ops-analyst" target="_blank" rel="noopener">View code &#8599;</a></p></details><details class="pj" id="proj-evals"><summary><span class="pn">Agent Team Evals</span><span class="tags">Python · Claude Code · Evaluation</span></summary><p>Asks whether a team of Claude agents (a planner, builders, and a reviewer) writes better code than a single agent. It runs the same coding tasks through three setups and grades each against hidden tests, measuring pass rate, tokens, and time. The first study was too small to settle it: in a 45-run pilot, one agent passed 14 of 15 runs and each team passed 15 of 15, while the teams used 1.6 to 2.8 times the tokens. A second study used 11 tasks a single agent can fail, with five runs per task for each setup. One agent passed 15 of 55 runs and a builder plus reviewer passed 11 of 55 at roughly 1.5 times the tokens, a gap too small to separate from chance. A further 132 runs on Haiku and Opus found no model or mixed team that beat one Sonnet agent. Parallel work and much larger codebases are still untested.</p><p class="lk"><a href="https://krisrchesney.github.io/agent-team-evals/" target="_blank" rel="noopener">Open live page &#8599;</a><a href="https://github.com/krisrchesney/agent-team-evals" target="_blank" rel="noopener">View code &#8599;</a></p></details><details class="pj" id="proj-council"><summary><span class="pn">ShowMe Council</span><span class="tags">Python · Claude agents · Data pipeline</span></summary><p>A nightly pipeline of Claude agents that turns Kansas City Council records into plain-language, fact-checked summaries. An extractor agent pulls out votes, spending, and dates with verbatim quotes. A summarizer writes only from those facts. A fact-checker agent and code checks then verify the quotes, the numbers, and the city&#x27;s own vote record. Only what passes both is published, and every page shows how much was rejected.</p><p class="lk"><a href="https://krisrchesney.github.io/showme-council/" target="_blank" rel="noopener">Open live page &#8599;</a><a href="https://github.com/krisrchesney/showme-council" target="_blank" rel="noopener">View code &#8599;</a></p></details><details class="pj" id="proj-kev"><summary><span class="pn">KEV Watch</span><span class="tags">Python · Machine learning · Security analytics</span></summary><p>Ranks newly published vulnerabilities by how likely they are to land in CISA&#x27;s Known Exploited Vulnerabilities catalog within 90 days. It scores each CVE from what the publisher released, updates daily, and checks its ranking against EPSS. A gradient boosting model reached a ROC AUC of 0.87 on a held-out test set, and the write-up is plain about its limits: it was not better than EPSS at the very top of the list, and the test set had only 37 positive CVEs.</p><p class="lk"><a href="https://krisrchesney.github.io/cve-kev-predictor/" target="_blank" rel="noopener">Open live page &#8599;</a><a href="https://github.com/krisrchesney/cve-kev-predictor" target="_blank" rel="noopener">View code &#8599;</a></p></details><details class="pj" id="proj-gh"><summary><span class="pn">GitHub Issues Triage</span><span class="tags">Python · FastAPI · Ticket triage · Drift monitoring</span></summary><p>Predicts, at the moment a GitHub issue is opened, whether maintainers will close it within 14 days. It is trained on issues from large Google-backed open-source repositories, served through a validated FastAPI endpoint, and monitored for drift. The build uses a feature allowlist, a time-ordered holdout, and tests that truncate the data to the moment each issue was created. Issue queues are ticket queues, so it answers the question a support team asks at intake: which new tickets will stall?</p><p class="lk"><a href="https://krisrchesney.github.io/gh-issues-triage/" target="_blank" rel="noopener">Open live page &#8599;</a><a href="https://github.com/krisrchesney/gh-issues-triage" target="_blank" rel="noopener">View code &#8599;</a></p></details><details class="pj" id="proj-box"><summary><span class="pn">Boxwatch</span><span class="tags">Web app · Python · BoardGameGeek data</span></summary><p>Plans where your board games go on the shelf. It keeps a collection, pulls each game&#x27;s stats from BoardGameGeek, and works out how to fit the boxes onto IKEA Kallax, Eket, and Billy shelving, sorted by the priorities you choose (player count, complexity, category, or any order). Each box is drawn to scale inside its cube, games can sit behind other games, and a checked-out game keeps its cube reserved. The live demo uses a sample shelf of well-known games, and your edits stay in your own browser. The full version runs locally and searches all of BoardGameGeek.</p><p class="lk"><a href="https://krisrchesney.github.io/boxwatch/" target="_blank" rel="noopener">Open live page &#8599;</a><a href="https://github.com/krisrchesney/boxwatch" target="_blank" rel="noopener">View code &#8599;</a></p></details><details class="pj" id="proj-park"><summary><span class="pn">Park Wait Forecast</span><span class="tags">Python · FastAPI · Forecasting · Drift monitoring</span></summary><p>Forecasts whether an open theme-park ride&#x27;s posted wait will be at least 45 minutes one hour from now. It is trained on ride wait snapshots collected every 10 minutes, served through a validated FastAPI endpoint, and monitored for data and performance drift. Tests guard against future information leaking into features, and the build prints a &quot;wait stays the same&quot; baseline that the model has to beat. The pipeline and tests are complete, and real-data results are not published yet.</p><p class="lk"><a href="https://github.com/krisrchesney/park-wait-forecast" target="_blank" rel="noopener">View code &#8599;</a></p></details></div><p class="sub" style="margin-top:14px"><a href="https://github.com/krisrchesney?tab=repositories" target="_blank" rel="noopener">All repositories on GitHub &#8599;</a></p></section></div>
+<div class="w">
+<section id="education"><h2>Education</h2><p><b>M.S. Data Analytics</b>, Western Governors University <span class='meta' style='white-space:nowrap'>2019 · Learned Tableau here</span></p><p><b>B.S. Computer Science, minor in Business</b>, California State University San Marcos <span class='meta' style='white-space:nowrap'>2018 · 3.6 GPA</span></p><p><b>A.S. Computer Networks</b>, Coleman College <span class='meta' style='white-space:nowrap'>2008 · 3.7 GPA</span></p><h4 class="sec2">Certifications and honors</h4><ul class="certs"><li>Generative AI with Large Language Models, DeepLearning.AI and AWS (2024)</li><li>Data Science Professional Certificate, Coursera (2024)</li><li>Intro to Snowflake for Devs, Data Scientists, Data Engineers (2024)</li><li>SAS Certified Statistical Business Analyst (2019)</li><li>SAS Certified Base Programmer for SAS 9 (2019)</li><li>Oracle Database SQL Certified Associate</li><li>Splunk Certified Power User and Certified User (2018)</li><li>Bertelsmann Data Science Challenge Scholarship, Udacity (2018)</li><li>Apple Support certification (2014)</li></ul></section>
+<section id="skills"><h2>Skills</h2><dl><dt>Leadership</dt><dd>Team leadership &middot; Technology strategy &middot; Vendor management &middot; Agile and Scrum</dd><dt>Platforms and identity</dt><dd>Microsoft 365 &middot; Entra, AD, and SSO &middot; PowerShell &middot; HubSpot &middot; Jira &middot; NetSuite &middot; Webflow and web ops &middot; AWS</dd><dt>Data and AI</dt><dd>Data and ETL &middot; Machine learning &middot; Security analytics &middot; Applied AI (Claude) &middot; Automation</dd><dt>Tools across roles</dt><dd>Jira Service Management &middot; ServiceNow &middot; Power Automate &middot; Domo &middot; Power BI &middot; Tableau &middot; SQL &middot; Python &middot; PostgreSQL &middot; Athena &middot; Snowflake &middot; Twilio Segment &middot; Elastic &middot; Splunk &middot; Zoom Phone &middot; Hover &middot; Oracle Opera &middot; Delphi &middot; iHotelier &middot; n8n &middot; Zapier</dd></dl></section>
+<section id="contact"><h2>Contact</h2><p><a id="mail" href="#contact" data-goatcounter-click="click-email" data-goatcounter-title="Email me">Email me</a> &middot; <a href="https://www.linkedin.com/in/kristopher-chesney-88464880" target="_blank" rel="noopener" data-goatcounter-click="click-linkedin" data-goatcounter-title="LinkedIn">LinkedIn</a> &middot; <a href="https://github.com/krisrchesney" target="_blank" rel="noopener" data-goatcounter-click="click-github" data-goatcounter-title="GitHub">GitHub</a> &middot; <a href="Kristopher-Chesney-Resume.pdf" download data-goatcounter-click="click-pdf" data-goatcounter-title="Download PDF">Resume (PDF)</a></p></section>
+<footer>&copy; 2026 Kristopher Chesney</footer></div>
 
-/* Hero */
-.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--hero-a),var(--hero-b));color:#e8edf7;padding:72px 0 80px}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 18s ease-in-out infinite alternate}
-.hero::before{width:420px;height:420px;background:#4f46e5;left:-120px;top:-140px}
-.hero::after{width:380px;height:380px;background:#0d9488;right:-100px;bottom:-160px;animation-delay:-8s}
-@keyframes drift{to{transform:translate(60px,40px) scale(1.12)}}
-.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse at 30% 40%,#000 20%,transparent 75%)}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center}
-.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:13px;background:rgba(255,255,255,.07)}
-.pill i{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.25)}
-.hero h1{font-size:clamp(2.4rem,6vw,4rem);letter-spacing:-.02em;margin:18px 0 8px}
-.hero .tagline{font-size:clamp(1.05rem,2.2vw,1.35rem);color:#7ee7da;font-weight:600;margin-bottom:18px}
-.hero .lede{max-width:56ch;color:#c8d3e8;font-size:1.05rem}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.25);color:#fff;text-decoration:none;font-weight:600;background:rgba(255,255,255,.08)}
-.btn:hover{background:rgba(255,255,255,.16)}
-.btn.primary{background:#2dd4bf;color:#04201e;border-color:#2dd4bf}
-.btn.primary:hover{background:#5eead4}
-.meta{margin-top:18px;color:#9fb0cc;font-size:14px}
-.steps{display:grid;gap:12px}
-.step{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;backdrop-filter:blur(6px);transition:transform .25s}
-.step:hover{transform:translateX(6px)}
-.step:nth-child(1){margin-left:0;border-color:#2dd4bf}.step:nth-child(2){margin-left:24px}.step:nth-child(3){margin-left:48px}
-.step small{color:#7ee7da;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:11px}
-.step strong{display:block;font-size:1.05rem}
-.step span{color:#b7c4de;font-size:14px}
-
-/* Sections */
-section{padding:64px 0}
-.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
-.kicker{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px;margin-bottom:6px}
-h2{font-size:clamp(1.6rem,3.5vw,2.2rem);letter-spacing:-.01em}
-.sub{color:var(--muted);max-width:68ch;margin-top:6px;text-wrap:pretty}
-.sec-head>div:first-child{flex:1 1 420px}
-h2,h3{text-wrap:balance}
-p,li,.oneline{text-wrap:pretty}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
-.js .reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.hero::before,.hero::after{animation:none}html{scroll-behavior:auto}}
-
-/* Stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.stat{padding:20px;text-align:left;width:100%;border:1px solid var(--line);background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);position:relative;transition:transform .2s,border-color .2s}
-.stat:hover{transform:translateY(-3px);border-color:var(--accent)}
-.stat .num{font-size:2.4rem;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--accent)}
-.stat .lab{font-weight:600;margin-top:6px}
-.stat .more{max-height:0;overflow:hidden;color:var(--muted);font-size:14px;transition:max-height .35s ease}
-.stat[aria-expanded="true"] .more{max-height:260px;margin-top:8px}
-.stat .plus{position:absolute;right:14px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;font-size:16px;color:var(--muted);transition:transform .25s}
-.stat[aria-expanded="true"] .plus{transform:rotate(45deg)}
-.stat small{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
-.note{color:var(--muted);font-size:13px;margin-top:12px}
-
-/* Timeline */
-.tl-ctl{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted)}
-.legend span{display:inline-flex;align-items:center;gap:6px}
-.legend i{width:12px;height:12px;border-radius:4px;display:inline-block}
-.tl-scroll{overflow-x:auto;padding:6px 2px 14px;margin-top:18px}
-.tl{position:relative;min-width:980px;padding:8px 0 30px 112px}
-.lane{position:relative;height:52px;margin-bottom:10px;border-radius:10px;background:var(--surface-2)}
-.lane-name{position:absolute;left:-112px;top:0;width:104px;height:100%;display:flex;align-items:center;font-size:12.5px;font-weight:700;color:var(--muted);line-height:1.2}
-.bar{position:absolute;top:5px;height:42px;border:0;border-radius:9px;color:#fff;font-size:12.5px;font-weight:600;text-align:left;padding:0 9px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;box-shadow:0 2px 6px rgba(0,0,0,.18);transition:transform .15s,filter .15s,opacity .2s;min-width:8px}
-.bar:hover{transform:translateY(-2px);filter:brightness(1.1)}
-.bar[aria-pressed="true"]{outline:3px solid var(--text);outline-offset:1px;z-index:3}
-.bar.ent{background:var(--l-ent)}.bar.sec{background:var(--l-sec);color:#042f2c}.bar.sys{background:var(--l-sys);color:#2b1700}.bar.mil{background:var(--l-mil)}.bar.edu{background:var(--l-edu);color:#032a40}
-:root[data-theme="dark"] .bar.ent{color:#0e1030}
-.axis{position:relative;height:26px;margin-top:4px}
-.tick{position:absolute;top:0;font-size:12px;color:var(--muted);transform:translateX(-50%)}
-.gridline{position:absolute;top:0;bottom:0;width:1px;background:var(--line);pointer-events:none}
-.tl-body{position:relative}
-.detail{margin-top:8px;padding:22px 24px;border-left:6px solid var(--accent)}
-.detail h3{font-size:1.3rem}
-.detail .dates{color:var(--muted);font-size:14px;margin:2px 0 10px}
-.detail ul{margin:.4em 0 0;padding-left:1.2em}
-.detail li{margin:.3em 0}
-.empty{color:var(--muted)}
-.zoom{display:inline-flex;gap:6px}
-
-/* Experience */
-.org{padding:26px}
-.org + .org{margin-top:18px}
-.org-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
-.org h3{font-size:1.4rem}
-.dates{color:var(--muted);font-size:14px}
-.role{border-top:1px solid var(--line);padding-top:6px;margin-top:14px}
-details>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:10px 0;font-weight:700}
-details>summary::-webkit-details-marker{display:none}
-details>summary::before{content:"+";display:grid;place-items:center;width:24px;height:24px;border-radius:7px;background:var(--surface-2);color:var(--accent);font-weight:800;flex:none;transition:transform .2s}
-details[open]>summary::before{content:"\2212"}
-summary .when{margin-left:auto;color:var(--muted);font-weight:500;font-size:14px;text-align:right}
-.role ul,.proj ul{margin:.2em 0 .6em;padding-left:1.3em}
-.role li{margin:.35em 0}
-.oneline{color:var(--muted);margin:0 0 6px 34px}
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}
-.proj{border:1px solid var(--line);border-radius:14px;padding:6px 16px;background:var(--surface);transition:border-color .2s,opacity .2s}
-.proj:hover{border-color:var(--accent)}
-.proj p{color:var(--muted);font-size:15px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
-.tag{font-size:12px;padding:2px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
-:root[data-theme="dark"] .tag{color:#7ee7da}
-.mini{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.mini .card{padding:16px 20px}
-.mini b{display:block}
-.mini span{color:var(--muted);font-size:14px}
-.expand-note{display:none}
-html[data-view="simple"] .detail-only{display:none}
-
-/* Skills */
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);background:var(--surface);padding:7px 14px;border-radius:999px;font-size:14px;transition:all .15s}
-.chip:hover{border-color:var(--accent)}
-.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
-.group{margin-top:20px}
-.group h3{font-size:.95rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
-.filter-status{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:60;width:max-content;max-width:calc(100% - 28px);padding:10px 14px;border-radius:14px;background:var(--surface);border:1px solid var(--accent);box-shadow:var(--shadow);display:none;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px}
-.filter-status.on{display:flex}
-.is-dim{opacity:.38}
-.is-match{border-color:var(--accent)!important;box-shadow:0 0 0 2px var(--accent) inset}
-.bar.is-dim{opacity:.22}
-
-/* Education */
-.edu{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.edu .card{padding:20px}
-.edu small{color:var(--muted)}
-.certs{columns:2;column-gap:28px;margin:8px 0 0;padding-left:1.2em}
-.certs li{break-inside:avoid;margin:.3em 0}
-
-
-
-
-/* Email dialog */
-.mailbox{position:fixed;inset:0;z-index:200;background:rgba(3,8,20,.62);display:grid;place-items:center;padding:16px}
-.mailbox[hidden]{display:none}
-.mailcard{position:relative;width:min(420px,100%);background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:22px 22px 20px}
-.mailcard h3{font-size:1.2rem;margin-bottom:8px}
-.mailaddr{font-weight:700;font-size:1.05rem;word-break:break-all;margin:0 0 14px;user-select:all}
-.mailbtns{display:flex;flex-wrap:wrap;gap:8px}
-.mailbtns button.abtn{cursor:pointer;font:inherit;font-weight:600}
-.mailx{position:absolute;right:10px;top:8px;border:0;background:none;font-size:26px;line-height:1;color:var(--muted);cursor:pointer}
-
-/* Project action buttons */
-.proj .actions{display:flex;flex-wrap:wrap;gap:8px;padding:2px 0 12px}
-.abtn{display:inline-flex;align-items:center;gap:6px;padding:8px 15px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent);transition:filter .15s,background .15s}
-.abtn.live{background:var(--accent);color:var(--accent-ink)}
-.abtn.live:hover{filter:brightness(1.1)}
-.abtn.code{background:transparent;color:var(--accent)}
-.abtn.code:hover{background:var(--accent-soft)}
-
-/* Projects dropdown */
-.dd{position:relative}
-.dd-btn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:600}
-.dd-btn:hover,.dd-btn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent)}
-.dd-menu{position:absolute;right:0;top:calc(100% + 10px);width:min(370px,90vw);background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:8px;display:none;z-index:80}
-.dd-menu.open{display:block}
-.dd-item{display:flex;align-items:center;gap:8px;border-radius:10px}
-.dd-item:hover{background:var(--surface-2)}
-.dd-item>a:first-child{flex:1;display:block;padding:10px 12px;text-decoration:none;color:var(--text)}
-.dd-item b{display:block}
-.dd-item small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:2px}
-.dd-live{font-size:12px;font-weight:700;padding:5px 11px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);border-radius:8px;text-decoration:none;margin-right:8px;white-space:nowrap}
-.dd-live:hover{filter:brightness(1.1)}
-.dd-foot{border-top:1px solid var(--line);margin-top:6px;padding:10px 12px 4px;font-size:13px;color:var(--muted)}
-@media (max-width:700px){
-  .dd{position:static}
-  .dd-menu{position:fixed;left:12px;right:12px;top:68px;width:auto;max-height:calc(100vh - 96px);overflow-y:auto}
-  .dd-item{flex-wrap:wrap}
-  .dd-item>a:first-child{flex:1 1 60%}
-  .dd-live{margin:0 12px 10px}
-}
-@media (max-width:520px){.dd-btn{padding:6px 10px}}
-
-footer{padding:40px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-@media (max-width:900px){
-  .hero .wrap{grid-template-columns:1fr}
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .projects,.mini,.edu{grid-template-columns:1fr}
-  .links{display:none}
-  .step:nth-child(2){margin-left:12px}.step:nth-child(3){margin-left:24px}
-  .certs{columns:1}
-}
-@media (max-width:520px){.stats{grid-template-columns:1fr}.seg button{padding:5px 9px}.logo span{display:none}}
-@media print{
-  :root[data-theme],:root{--bg:#f6f7fb;--surface:#ffffff;--surface-2:#eef1f7;--text:#0f172a;--muted:#475569;--line:#d9deea;--accent:#0f766e;--accent-soft:#ccfbf1;--accent-ink:#ffffff}
-  .nav,.hero::before,.hero::after,.grid-bg,.cta,.tools,.zoom,.filter-status,#skills-chips,.tl-scroll{display:none!important}
-  html[data-view] .detail-only{display:block!important}
-  body{background:#fff;color:#000}.hero{background:none;color:#000;padding:10px 0}.hero .lede,.hero .meta,.hero .tagline,.step span{color:#222}
-  .js .reveal{opacity:1;transform:none}details>*{display:block}
-}
-</style>
-</head>
-<body>
-<a class="sr" href="#overview">Skip to content</a>
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="#top" aria-label="Kristopher Chesney, top of page"><b>KC</b><span>Kristopher Chesney</span></a>
-    <nav class="links" aria-label="Sections">
-      <a href="#impact">Impact</a><a href="#timeline">Timeline</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a>
-    </nav>
-    <div class="tools">
-      <div class="dd">
-        <button type="button" class="dd-btn" id="dd-btn" aria-expanded="false" aria-haspopup="true" aria-controls="dd-menu">Projects <span aria-hidden="true">&#9662;</span></button>
-        <div class="dd-menu" id="dd-menu" role="menu">
-          <div class="dd-item" role="none"><a role="menuitem" href="https://github.com/krisrchesney/payments-ops-analyst" target="_blank" rel="noopener"><b>Payments Ops Analyst</b><small>Tests an AI agent on simulated payment incidents, with the failures published</small></a><a class="dd-live" role="menuitem" href="https://krisrchesney.github.io/payments-ops-analyst/" target="_blank" rel="noopener">Live page &#8599;</a></div>
-          <div class="dd-item" role="none"><a role="menuitem" href="https://github.com/krisrchesney/agent-team-evals" target="_blank" rel="noopener"><b>Agent Team Evals</b><small>Tests whether teams of AI agents write better code than one agent</small></a><a class="dd-live" role="menuitem" href="https://krisrchesney.github.io/agent-team-evals/" target="_blank" rel="noopener">Live page &#8599;</a></div>
-          <div class="dd-item" role="none"><a role="menuitem" href="https://github.com/krisrchesney/showme-council" target="_blank" rel="noopener"><b>ShowMe Council</b><small>Fact-checked, plain-language summaries of Kansas City Council records</small></a><a class="dd-live" role="menuitem" href="https://krisrchesney.github.io/showme-council/" target="_blank" rel="noopener">Live page &#8599;</a></div>
-          <div class="dd-item" role="none"><a role="menuitem" href="https://github.com/krisrchesney/cve-kev-predictor" target="_blank" rel="noopener"><b>KEV Watch</b><small>Ranks new CVEs by likelihood of landing in CISA's KEV catalog</small></a><a class="dd-live" role="menuitem" href="https://krisrchesney.github.io/cve-kev-predictor/" target="_blank" rel="noopener">Live page &#8599;</a></div>
-          <div class="dd-item" role="none"><a role="menuitem" href="https://github.com/krisrchesney/gh-issues-triage" target="_blank" rel="noopener"><b>GitHub Issues Triage</b><small>Predicts whether a new issue closes within 14 days</small></a><a class="dd-live" role="menuitem" href="https://krisrchesney.github.io/gh-issues-triage/" target="_blank" rel="noopener">Live page &#8599;</a></div>
-          <div class="dd-item" role="none"><a role="menuitem" href="https://github.com/krisrchesney/boxwatch" target="_blank" rel="noopener"><b>Boxwatch</b><small>Plans where board games fit on IKEA shelves, using BoardGameGeek data</small></a><a class="dd-live" role="menuitem" href="https://krisrchesney.github.io/boxwatch/" target="_blank" rel="noopener">Live page &#8599;</a></div>
-          <div class="dd-item" role="none"><a role="menuitem" href="https://github.com/krisrchesney/park-wait-forecast" target="_blank" rel="noopener"><b>Park Wait Forecast</b><small>Forecasts ride waits an hour ahead, with drift monitoring</small></a></div>
-          <div class="dd-foot"><a role="menuitem" href="#projects">Read about these on this page</a> &middot; <a role="menuitem" href="https://github.com/krisrchesney?tab=repositories" target="_blank" rel="noopener">All repositories</a></div>
-        </div>
-      </div>
-      <div class="seg" role="group" aria-label="Level of detail">
-        <button type="button" id="v-simple" aria-pressed="true">Simple</button>
-        <button type="button" id="v-detailed" aria-pressed="false">Detailed</button>
-      </div>
-      <button class="icon-btn" id="theme" type="button" aria-label="Toggle light or dark theme" title="Toggle theme">&#9680;</button>
-    </div>
-  </div>
-</header>
-
-<main id="top">
-<div class="hero" id="overview">
-  <div class="grid-bg" aria-hidden="true"></div>
-  <div class="wrap">
-    <div>
-      <span class="pill"><i></i> Open to new opportunities</span>
-      <h1>Kristopher Chesney</h1>
-      <div class="tagline">Technology Leader | Systems, Data, and Applied AI</div>
-      <p class="lede">Technology leader with 20+ years across data science, security analytics, IT operations and systems administration. Leads teams and delivers work across the stack, from infrastructure and identity to data and analytics. Proficient at building code and developing workflows using AI tools. Excels at setting and executing strategy.</p>
-      <div class="cta">
-        <a class="btn primary" href="Kristopher-Chesney-Resume.pdf" download data-goatcounter-click="click-pdf" data-goatcounter-title="Download PDF">Download resume (PDF)</a>
-        <a class="btn" href="#timeline">Explore the timeline</a>
-        <a class="btn" id="mail" href="#overview" data-goatcounter-click="click-email" data-goatcounter-title="Email me">Email me</a>
-        <a class="btn" href="https://www.linkedin.com/in/kristopher-chesney-88464880" target="_blank" rel="noopener" data-goatcounter-click="click-linkedin" data-goatcounter-title="LinkedIn">LinkedIn</a>
-        <a class="btn" href="https://github.com/krisrchesney" target="_blank" rel="noopener" data-goatcounter-click="click-github" data-goatcounter-title="GitHub">GitHub</a>
-        <a class="btn" href="#projects" data-goatcounter-click="click-projects" data-goatcounter-title="Projects button">Projects</a>
-      </div>
-      <div class="meta">O'Fallon, MO &middot; Remote, hybrid, or on-site</div>
-    </div>
-    <div class="steps" aria-label="Recent career progression">
-      <div class="step"><small>Oct 2026</small><strong>Sr. Manager, Enterprise Technology</strong><span>Led data science, systems, and support</span></div>
-      <div class="step"><small>Jan 2026</small><strong>Manager, Technology Services</strong><span>Ran the IT service desk and led platform projects</span></div>
-      <div class="step"><small>Apr 2025</small><strong>Data Engineer</strong><span>Dashboards, ETL, and data connections across the company</span></div>
-    </div>
-  </div>
-</div>
-
-<section id="impact">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div><div class="kicker">Impact</div><h2>Results</h2><p class="sub">Select a card for the detail behind each number.</p></div>
-    </div>
-    <div class="stats">
-      <button class="stat reveal" type="button" aria-expanded="false"><span class="plus" aria-hidden="true">+</span><small>Cost savings</small><div class="num"><span class="count" data-to="200" data-prefix="$" data-suffix="K">$200K</span></div><div class="lab">saved in one fiscal year</div><div class="more">$150K from moving Customer Support from a vendor to an in-house team (outside vendor cost against internal cost), $38K from software consolidation, and $15K from smaller projects. Larger savings are projected each year after.</div></button>
-      <button class="stat reveal" type="button" aria-expanded="false"><span class="plus" aria-hidden="true">+</span><small>AI ticket triage</small><div class="num"><span class="count" data-to="25" data-suffix="%">25%</span></div><div class="lab">faster resolution for support tickets</div><div class="more">A Claude-based triage tool, integrated with HubSpot, pulls every unowned ticket, scores sentiment, finds answers in FAQs and runbooks, and drafts replies. It works on text tickets and transcribed calls, and makes the queue much easier to manage. Measured from live data, from before launch through the first month.</div></button>
-      <button class="stat reveal" type="button" aria-expanded="false"><span class="plus" aria-hidden="true">+</span><small>HubSpot customer support</small><div class="num"><span class="count" data-to="30" data-suffix="%">30%</span></div><div class="lab">fewer incoming tickets to handle</div><div class="more">Claude analyzed historic tickets to find trends and clusters. Roughly 20 HubSpot workflows, intake forms, and spam filtering were then built through its API, with Zoom Phone connected. They filter spam, send auto replies, and reroute misdirected requests to the right teams. Measured from live data, from before launch through the first month.</div></button>
-      <button class="stat reveal" type="button" aria-expanded="false"><span class="plus" aria-hidden="true">+</span><small>Microsoft 365 audit</small><div class="num">4 days</div><div class="lab">for a full audit, instead of 4 weeks</div><div class="more">Audited the full environment against best practice and wrote a remediation plan, with Claude helping build and check the analysis.</div></button>
-      <button class="stat reveal" type="button" aria-expanded="false"><span class="plus" aria-hidden="true">+</span><small>IT service department</small><div class="num"><span class="count" data-to="50" data-suffix="%">50%</span></div><div class="lab">leaner IT team, faster responses, satisfaction held</div><div class="more">Restructured the IT service department and its workflow so a team half the size could support roughly 200 staff. Response times reduced, the backlog shrunk, and client satisfaction was maintained. It came from fixing processes, removing wasted work, and coaching the team.</div></button>
-      <button class="stat reveal" type="button" aria-expanded="false"><span class="plus" aria-hidden="true">+</span><small>NetSuite migration</small><div class="num"><span class="count" data-to="85" data-suffix="%">85%</span></div><div class="lab">faster file mapping and validation</div><div class="more">Built a tool for a NetSuite version migration that cut file mapping and validation time with increased accuracy. The migration was completed.</div></button>
-      <button class="stat reveal" type="button" aria-expanded="false"><span class="plus" aria-hidden="true">+</span><small>Proficio</small><div class="num"><span class="count" data-to="24" data-suffix="%">24%</span></div><div class="lab">less time per analyst investigation</div><div class="more">Researched and set up AI that automatically researches security alerts, then evaluated it in an A/B test: analyst investigation time dropped 24%. The result fed product roadmap decisions.</div></button>
-      <button class="stat reveal" type="button" aria-expanded="false"><span class="plus" aria-hidden="true">+</span><small>Proficio</small><div class="num"><span class="count" data-to="26" data-suffix="%">26%</span></div><div class="lab">less log volume, lower cost</div><div class="more">A data cleaning strategy reduced log volume and lowered cost. Patent pending on the platform's multi-client ML architecture.</div></button>
-    </div>
-  </div>
-</section>
-
-<section id="timeline" style="background:var(--surface-2)">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div><div class="kicker">Timeline</div><h2>Career timeline</h2><p class="sub">Select a bar for details, or zoom in on a stretch of the career.</p></div>
-      <div class="zoom" role="group" aria-label="Timeline zoom">
-        <div class="seg">
-          <button type="button" data-range="2005,2027" aria-pressed="true">Full career</button>
-          <button type="button" data-range="2017,2027" aria-pressed="false">Since 2017</button>
-          <button type="button" data-range="2024.6,2027" aria-pressed="false">Augustine</button>
-        </div>
-      </div>
-    </div>
-    <div class="legend" aria-hidden="true">
-      <span><i style="background:var(--l-ent)"></i>Enterprise technology</span>
-      <span><i style="background:var(--l-sec)"></i>Security and data science</span>
-      <span><i style="background:var(--l-sys)"></i>Systems and IT</span>
-      <span><i style="background:var(--l-mil)"></i>Military</span>
-      <span><i style="background:var(--l-edu)"></i>Education</span>
-    </div>
-    <div class="tl-scroll card" style="padding:16px 18px 10px"><div class="tl" id="tl"></div></div>
-    <div class="tl-body"><div class="detail card" id="tl-detail" aria-live="polite"><p class="empty">Select a bar on the timeline.</p></div></div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div><div class="kicker">Experience</div><h2>Roles and projects</h2><p class="sub">Simple shows each role in one line. Detailed opens everything.</p></div>
-      <div class="seg" role="group" aria-label="Expand or collapse all">
-        <button type="button" id="open-all" aria-pressed="false">Expand all</button>
-        <button type="button" id="close-all" aria-pressed="false">Collapse all</button>
-      </div>
-    </div>
-
-    <article class="card org reveal" id="augustine">
-      <div class="org-top"><h3>Augustine Institute</h3><span class="dates">Florissant, MO &middot; Apr 2025 &ndash; Oct 2026 &middot; Promoted twice in 18 months</span></div>
-      <p class="oneline" style="margin-left:0;margin-top:4px">Managed the data science, systems administration, and IT support teams that supported 200+ staff, reporting to the VP of Technology. Owned cross-department projects, including moving Customer Support from a vendor to an in-house team, a Microsoft 365 audit and remediation plan, an Active Directory rebuild, an audit of the event planning systems (Oracle Opera, Delphi, iHotelier), and software consolidation that saved $200K.</p>
-
-      <div class="role" data-tags="leadership identity web">
-        <details>
-          <summary>Sr. Manager, Enterprise Technology <span class="when">Oct 2026</span></summary>
-          <ul>
-            <li>Led the core team of four: a program manager, a data scientist, a systems administrator, and an IT lead. The team covered data science, systems administration, and tech support, alongside the technology initiatives already underway.</li>
-            <li>Designed a single sign-on (SSO) plan across Microsoft Entra and other platforms that met cyber insurance requirements without overloading users with MFA prompts, making the environment both more secure and easier to use.</li>
-            <li>Developed and prototyped several website redesigns to add functionality, using Claude.</li>
-          </ul>
-        </details>
-      </div>
-      <div class="role" data-tags="leadership vendor m365 identity web">
-        <details>
-          <summary>Manager, Technology Services <span class="when">Jan 2026 &ndash; Oct 2026</span></summary>
-          <ul>
-            <li>Ran the IT service desk for the whole organization and kept up the dashboards, ETLs, and data connections built as Data Engineer.</li>
-            <li>Restructured the IT service department and workflow to allow for IT staff reduction by 50% while response times reduced, backlog shrunk, and client satisfaction was maintained for roughly 200 staff. Got there by fixing processes, removing wasted work, and coaching the team on troubleshooting and customer service.</li>
-            <li>Saved $200K in one fiscal year: $150K from moving Customer Support in-house, $38K from software consolidation, and $15K from smaller projects. Larger savings are projected each year after.</li>
-            <li>Became the Tech Help service owner and lead technician in February 2026 and moved the help desk from NinjaOne to Jira. Closed 161 Tech Help requests in about nine months, half of them within 4 days, while running the service desk.</li>
-            <li>Rebuilt the Active Directory structure to match the company's org structure (August 2026), enabled Hybrid Entra Join phase 1, and audited every Active Directory and Entra user and device.</li>
-            <li>Configured HubSpot Service Desk in a sandbox and took it live on Sept 15, 2026, then built the Zoom Phone call tree and the shared mailbox rules that feed it.</li>
-            <li>Verified the company's Atlassian domain, disabled 60 unused Zoom accounts, and set up Teams webinars and Webflow user management.</li>
-            <li>First responder on phishing and security reports. Handled vendor and license administration, including the Apple Developer membership renewal, and Claude seats and spend. Created the Claude Team account (June 2026), replacing Claude Enterprise.</li>
-            <li>Audited the event planning systems (Oracle Opera, Delphi, iHotelier) to understand how each area works, managed users, configured settings, and updated and monitored their APIs and data pipelines.</li>
-            <li>Managed web domains in Hover, with DNS and redirects on AWS (Route 53, CloudFront), and handled website cleanup mostly in Webflow.</li>
-            <li>Took on larger projects as the role grew: full Microsoft 365 audits, reviews of other platforms, and plans for consolidating and changing them.</li>
-            <li>Built tools with the teams that would use them and trained those teams to use them.</li>
-            <li>Forecasted IT ticket volume, Customer Support call and email volume, and budget spend by department, vendor, and product. Budget forecasts were built in Domo.</li>
-            <li>Wrote the requirements, epics, and user stories in Jira that the team worked from, for the HubSpot conversion, the Microsoft 365 audit, and the MFA project.</li>
-            <li>Supported about 60 Apple devices and set up Apple School Manager with device enrollment and Managed Apple Accounts.</li>
-          </ul>
-        </details>
-      </div>
-      <div class="role" data-tags="data aws automation">
-        <details>
-          <summary>Data Engineer <span class="when">Apr 2025 &ndash; Jan 2026</span></summary>
-          <ul>
-            <li>Hired part-time in April 2025 and moved to full-time on July 1. Supported data analytics across the company with dashboards, ETL pipelines, and data connections.</li>
-            <li>Used Domo for ETL and visualization, and Twilio Segment, PostgreSQL, and Athena for ETL and the data lake. Automated some workflows with n8n and Zapier.</li>
-            <li>Built a tool for a NetSuite version migration that cut file mapping and validation time by 85% with increased accuracy. The migration was completed.</li>
-            <li>Rebuilt the All Parish Query (June to July 2025), an aggregated table from multiple data sources showing each parish's subscription status, payments, and other metrics, then added territories and kept it updated.</li>
-            <li>Built Domo dashboards for sales, territory, and revenue, a quarterly expense report, and short-course dashboards. Produced audience lists and engagement analytics on request for events and the content platform.</li>
-            <li>Ran the organization's objectives and key results (OKR) tracking on my own from July 2025.</li>
-            <li>Fixed Salesforce and HubSpot data (address cleanup, contact owners) and built a Domo write-back to Salesforce.</li>
-            <li>Built a help desk dashboard from NinjaOne data (August 2025) and set up alerting and proactive monitoring for web and streaming platforms.</li>
-            <li>Wrote the department's Data Governance Policy and Data Template Guidance (September 2025).</li>
-          </ul>
-        </details>
-      </div>
-
-      <h4 style="margin:26px 0 4px" class="detail-only">Selected projects</h4>
-      <div class="projects detail-only">
-        <div class="proj" data-tags="hubspot vendor automation leadership"><details><summary>Customer Support, vendor to in-house</summary><p>Planned the move and carried it out within months. Moving it in-house saved $150K in one fiscal year, with larger savings projected each year after. Built the support platform in HubSpot, with Zoom Phone connected, intake forms, and roughly 20 workflows for better routing. Claude analyzed historic tickets for trends and clusters and helped build the workflows through the HubSpot API. Spam filtering, auto replies, and moving non-support requests elsewhere cut incoming volume by 30%.</p><div class="tags"><span class="tag">HubSpot</span><span class="tag">Zoom Phone</span><span class="tag">Vendor management</span></div></details></div>
-        <div class="proj" data-tags="ai hubspot automation"><details><summary>Support triage assistant (Claude)</summary><p>Pulls every unowned HubSpot ticket, scores sentiment, breaks down the problem, and searches FAQs and runbooks for answers and proposed replies. Handles text tickets and transcribed voice calls. It cut resolution time by 25% and made the queue easier to manage. Built with the support team, who were trained to use it.</p><div class="tags"><span class="tag">Claude</span><span class="tag">HubSpot</span><span class="tag">Automation</span></div></details></div>
-        <div class="proj" data-tags="m365 ai strategy"><details><summary>Microsoft 365 audit</summary><p>Audited the full environment against best practice and wrote a plan to close the gaps. Finished in roughly 4 days instead of 4 weeks, with Claude helping build and check the analysis.</p><div class="tags"><span class="tag">Microsoft 365</span><span class="tag">Claude</span><span class="tag">Strategy</span></div></details></div>
-        <div class="proj" data-tags="netsuite data automation"><details><summary>NetSuite migration tool</summary><p>Built a tool to assist the move from an older NetSuite version to a new one. It cut file mapping and validation time by 85% with increased accuracy. The migration was completed.</p><div class="tags"><span class="tag">NetSuite</span><span class="tag">Data</span></div></details></div>
-        <div class="proj" data-tags="identity security m365"><details><summary>Identity and security plan</summary><p>Designed a single sign-on (SSO) policy across Microsoft Entra and other platforms that satisfies the cyber insurance policy without overloading users with MFA prompts, so security improved without making sign-in harder.</p><div class="tags"><span class="tag">Entra</span><span class="tag">SSO</span><span class="tag">Security</span></div></details></div>
-        <div class="proj" data-tags="identity powershell ai automation m365"><details><summary>Onboarding and offboarding tool</summary><p>PowerShell scripts for Active Directory and Entra that test, check, and build each new user and provision what they need. Cut onboarding mistakes and the time to onboard.</p><div class="tags"><span class="tag">PowerShell</span><span class="tag">Active Directory</span><span class="tag">Claude</span></div></details></div>
-        <div class="proj" data-tags="ai jira automation"><details><summary>Task board</summary><p>A post-it style board that connects to email, instant messaging, Jira, and other tools. It reviews messages and work daily or on demand and ranks tasks visually. It has a log tracker and can create or complete Jira tickets directly. Packaged as a plugin that several colleagues used.</p><div class="tags"><span class="tag">Claude</span><span class="tag">Jira</span><span class="tag">Plugin</span></div></details></div>
-        <div class="proj" data-tags="identity m365"><details><summary>Active Directory rebuild</summary><p>Restructured Active Directory, the system that controls staff accounts and access, to match the company's org structure.</p><div class="tags"><span class="tag">Active Directory</span></div></details></div>
-        <div class="proj" data-tags="web aws"><details><summary>Website redesigns and web operations</summary><p>Developed and prototyped several redesigns to add functionality, using Claude. Handled website cleanup mostly in Webflow, domains in Hover, and DNS and redirects on AWS (Route 53, CloudFront).</p><div class="tags"><span class="tag">Webflow</span><span class="tag">AWS</span><span class="tag">Hover</span></div></details></div>
-        <div class="proj" data-tags="strategy vendor"><details><summary>Event planning platform audit</summary><p>Owned the audit of Oracle Opera, Delphi, and iHotelier to understand each area. Managed users, configured settings, and updated and monitored the APIs and data pipelines.</p><div class="tags"><span class="tag">Oracle Opera</span><span class="tag">Delphi</span><span class="tag">iHotelier</span></div></details></div>
-        <div class="proj" data-tags="jira leadership"><details><summary>Jira Service Management and projects</summary><p>Implemented Jira for project management. Helped build out Jira Service Management for IT help ticketing, including Incident, Problem, and Change requests. As Manager, Technology Services, led the team using it, set the SLAs, tracked all ticket types, and was the escalation point for many tickets.</p><div class="tags"><span class="tag">Jira</span><span class="tag">Jira Service Management</span></div></details></div>
-        <div class="proj" data-tags="automation m365"><details><summary>Power Automate approval workflow</summary><p>Built a Power Automate approval workflow for employee stipends: a manager submits a request, then it routes to the VP and to Finance for final approval.</p><div class="tags"><span class="tag">Power Automate</span></div></details></div>
-        <div class="proj" data-tags="vendor strategy"><details><summary>Software consolidation and smaller projects</summary><p>Together saved $53K in one fiscal year: $38K from consolidating software and $15K from smaller projects.</p><div class="tags"><span class="tag">Vendor management</span></div></details></div>
-      </div>
-    </article>
-
-    <article class="card org reveal" id="proficio">
-      <div class="org-top"><h3>Proficio, Inc.</h3><span class="dates">Carlsbad, CA (Remote) &middot; May 2018 &ndash; Aug 2024 &middot; Four promotions in six years</span></div>
-      <p class="oneline" style="margin-left:0;margin-top:4px">Promoted four times in six years, from analyst to Data Science Manager. Led data science for the machine learning behind a managed security service that monitors many clients at once. Patent pending on its multi-client ML architecture.</p>
-      <div class="role" data-tags="ml security data ai agile jira">
-        <details>
-          <summary>Data Science Manager (Remote) <span class="when">Apr 2022 &ndash; Aug 2024</span></summary>
-          <ul>
-            <li>Led data science for the machine learning behind a managed security service that monitors many clients at once, and built and maintained the ML models and alerts in Elastic.</li>
-            <li>Built ML alerts that correlated multiple anomalies for higher-fidelity detection, and added ML anomaly enrichment to rule-based alerts through FortiSOAR.</li>
-            <li>Researched and set up AI that automatically researches security alerts, then evaluated it in an A/B test: analyst investigation time dropped 24%, which fed product roadmap decisions. The test ran in the Elastic alert platform.</li>
-            <li>Cut ingested log volume 26% with a data cleaning strategy, which lowered cost.</li>
-            <li>Set up cross-department analytics reporting with automated pipelines from several platforms into Power BI.</li>
-            <li>Wrote the requirements, epics, and user stories in Jira for the team's major work, and worked in Agile sprints with a scrum master for the last three years, running the sprint ceremonies when the scrum master was out.</li>
-            <li>Patent pending on the platform's multi-client machine learning architecture.</li>
-          </ul>
-        </details>
-      </div>
-      <div class="role" data-tags="ml data security">
-        <details><summary>Strategic Data Scientist <span class="when">Jan 2021 &ndash; Apr 2022</span></summary>
-          <ul><li>Designed unsupervised ML models for anomaly detection in Elastic, and built data visualizations and reports for threat hunting and investigation teams.</li><li>Worked across teams to define and build data enrichment pipelines.</li></ul>
-        </details>
-      </div>
-      <div class="role" data-tags="security data">
-        <details><summary>Strategic Use Case Architect <span class="when">Dec 2019 &ndash; Jan 2021</span></summary>
-          <ul><li>Analyzed security logs and researched attack techniques to build multi-tenant and client-specific alerts. Alerts analyzed in Elastic were sent to ServiceNow as tickets.</li><li>Led a project to standardize data ingestion from disparate sources.</li></ul>
-        </details>
-      </div>
-      <div class="role" data-tags="security">
-        <details><summary>Cybersecurity Content Development Engineer and Cybersecurity Analyst <span class="when">May 2018 &ndash; Dec 2019</span></summary>
-          <ul><li>Triaged security incidents across a multi-tenant environment.</li></ul>
-        </details>
-      </div>
-    </article>
-
-    <div class="mini reveal" style="margin-top:18px">
-      <div class="card" data-tags="data ml"><b>BIGDatA REU, New Mexico State University</b><span class="dates">May &ndash; Aug 2017</span><br><span>Analyzed the reliability of large storage systems. Used Python in Jupyter (NumPy, Pandas, Seaborn, scikit-learn).</span><details class="detail-only"><summary>More detail</summary><ul style="color:var(--muted);font-size:14px"><li>Research program in big data, part of an undergraduate computer science degree.</li><li>Tableau was learned separately in the M.S. program.</li></ul></details></div>
-      <div class="card" data-tags="systems"><b>TechMD, Costa Mesa, CA</b><span class="dates">2014 &ndash; 2015</span><br><span>Systems Analyst II. Assessed the IT needs of small and mid-sized business clients and delivered the solutions.</span><details class="detail-only"><summary>More detail</summary><ul style="color:var(--muted);font-size:14px"><li>Work was mostly Windows-based.</li><li>Implemented networks, supported hardware, and provided heavy Microsoft 365 support.</li><li>Wrote documentation, optimized processes, and helped define a new organizational structure.</li><li>Earned an Apple Support certification (2014).</li></ul></details></div>
-      <div class="card" data-tags="systems leadership"><b>TheCloudLounge, Auckland, NZ</b><span class="dates">2013 &ndash; 2014</span><br><span>Technical Consultant. Implemented cloud point-of-sale systems and led support.</span><details class="detail-only"><summary>More detail</summary><ul style="color:var(--muted);font-size:14px"><li>Researched, tested, and implemented cloud-based point-of-sale systems for retail, restaurant, clothing, jewelry, antique, bar, and liquor store clients.</li><li>Rolled out to about 8 clients and supported about twice that.</li><li>Led one support person and provided phone, email, and on-site hardware and software support, with many iPads.</li><li>Trained clients on the software and hardware.</li></ul></details></div>
-      <div class="card" data-tags="systems identity"><b>Pacific Marine Credit Union, Oceanside, CA</b><span class="dates">2007 &ndash; 2013</span><br><span>Systems Administrator (2011 to 2013), earlier PC Technician. Managed servers and backups and gave Windows support across the organization.</span><details class="detail-only"><summary>More detail</summary><ul style="color:var(--muted);font-size:14px"><li>Supported about 8 branches and 250+ staff.</li><li>Researched and rolled out application security and user automation programs.</li><li>Worked with other departments to improve cooperation and support.</li></ul></details></div>
-      <div class="card" data-tags="leadership"><b>USMC Reserves, Miramar, CA</b><span class="dates">2005 &ndash; 2011</span><br><span>Aviation Logistics Information Systems Specialist. Led a team of 6 to 8 Marines on computer and network maintenance. Held a Secret clearance (not current).</span><details class="detail-only"><summary>More detail</summary><ul style="color:var(--muted);font-size:14px"><li>Maintained aviation supply network systems and their backups at Marine Corps Air Station Miramar.</li><li>Graduated top of class from the Aviation Logistics Information Course and received a Meritorious Promotion.</li></ul></details></div>
-    </div>
-
-    <article class="card org reveal" id="projects" style="margin-top:18px">
-      <div class="org-top"><h3>Projects</h3><span class="dates"><a href="https://github.com/krisrchesney?tab=repositories" target="_blank" rel="noopener">All repositories on GitHub</a></span></div>
-      <p class="oneline" style="margin-left:0;margin-top:4px">Projects I've built on my own time, from AI agent pipelines to ranking new vulnerabilities to planning board game shelves. Open a card to see how each one works.</p>
-      <div class="projects" style="margin-top:12px">
-        <div class="proj" data-tags="ai data automation agile jira"><details><summary>Payments Ops Analyst</summary>
-          <p>A personal project on simulated card payment data, not production or employer work. I used Claude Code to assist in development: I set the requirements and product decisions, guided the build, reviewed and approved the code, and ran the deployments and tests. It includes a formal test of an AI agent that investigates payment incidents. The pass/fail rules were written before any run, with 4 questions run 3 times each, and every answer was graded against an answer key and rechecked with SQL. The results are published with the failures: 8 of 12 runs passed. When a question pointed at the problem, the agent found the true cause and the right document in 9 of 9 runs, but 2 of those answers had a wrong figure. With no hint, 1 of 3 runs found all three planted incidents, which is why automatic detection is next. The data, documents, and questions are mine and the sample is small, so 8 of 12 is not an accuracy rate. Monitoring and alerts are planned, not built.</p>
-          <div class="tags"><span class="tag">Databricks</span><span class="tag">PySpark</span><span class="tag">Claude Code</span><span class="tag">Evaluation</span></div></details><div class="actions"><a class="abtn live" href="https://krisrchesney.github.io/payments-ops-analyst/" target="_blank" rel="noopener">Open project page <span aria-hidden="true">&#8599;</span></a><a class="abtn code" href="https://github.com/krisrchesney/payments-ops-analyst" target="_blank" rel="noopener">View code</a></div></div>
-        <div class="proj" data-tags="ai ml data automation"><details><summary>Agent Team Evals</summary>
-          <p>Asks whether a team of Claude agents (a planner, builders, and a reviewer) writes better code than a single agent. It runs the same coding tasks through three setups and grades each against hidden tests, measuring pass rate, tokens, and time. The first study was too small to settle it: in a 45-run pilot, one agent passed 14 of 15 runs and each team passed 15 of 15, while the teams used 1.6 to 2.8 times the tokens. A second study used 11 tasks a single agent can fail, with five runs per task for each setup. One agent passed 15 of 55 runs and a builder plus reviewer passed 11 of 55 at roughly 1.5 times the tokens, a gap too small to separate from chance. A further 132 runs on Haiku and Opus found no model or mixed team that beat one Sonnet agent. Parallel work and much larger codebases are still untested.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Claude Code</span><span class="tag">Evaluation</span></div></details><div class="actions"><a class="abtn live" href="https://krisrchesney.github.io/agent-team-evals/" target="_blank" rel="noopener">Open live page <span aria-hidden="true">&#8599;</span></a><a class="abtn code" href="https://github.com/krisrchesney/agent-team-evals" target="_blank" rel="noopener">View code</a></div></div>
-        <div class="proj" data-tags="ai data automation"><details><summary>ShowMe Council</summary>
-          <p>A nightly pipeline of Claude agents that turns Kansas City Council records into plain-language, fact-checked summaries. An extractor agent pulls out votes, spending, and dates with verbatim quotes. A summarizer writes only from those facts. A fact-checker agent and code checks then verify the quotes, the numbers, and the city's own vote record. Only what passes both is published, and every page shows how much was rejected.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Claude agents</span><span class="tag">Data pipeline</span></div></details><div class="actions"><a class="abtn live" href="https://krisrchesney.github.io/showme-council/" target="_blank" rel="noopener">Open live page <span aria-hidden="true">&#8599;</span></a><a class="abtn code" href="https://github.com/krisrchesney/showme-council" target="_blank" rel="noopener">View code</a></div></div>
-        <div class="proj" data-tags="ml data security"><details><summary>KEV Watch</summary>
-          <p>Ranks newly published vulnerabilities by how likely they are to land in CISA's Known Exploited Vulnerabilities catalog within 90 days. It scores each CVE from what the publisher released, updates daily, and checks its ranking against EPSS. A gradient boosting model reached a ROC AUC of 0.87 on a held-out test set, and the write-up is plain about its limits: it was not better than EPSS at the very top of the list, and the test set had only 37 positive CVEs.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Machine learning</span><span class="tag">Security analytics</span></div>
-          </details><div class="actions"><a class="abtn live" href="https://krisrchesney.github.io/cve-kev-predictor/" target="_blank" rel="noopener">Open live page <span aria-hidden="true">&#8599;</span></a><a class="abtn code" href="https://github.com/krisrchesney/cve-kev-predictor" target="_blank" rel="noopener">View code</a></div></div>
-        <div class="proj" data-tags="ml data automation"><details><summary>GitHub Issues Triage</summary>
-          <p>Predicts, at the moment a GitHub issue is opened, whether maintainers will close it within 14 days. It is trained on issues from large Google-backed open-source repositories, served through a validated FastAPI endpoint, and monitored for drift. The build uses a feature allowlist, a time-ordered holdout, and tests that truncate the data to the moment each issue was created. Issue queues are ticket queues, so it answers the question a support team asks at intake: which new tickets will stall?</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Ticket triage</span><span class="tag">Drift monitoring</span></div>
-          </details><div class="actions"><a class="abtn live" href="https://krisrchesney.github.io/gh-issues-triage/" target="_blank" rel="noopener">Open live page <span aria-hidden="true">&#8599;</span></a><a class="abtn code" href="https://github.com/krisrchesney/gh-issues-triage" target="_blank" rel="noopener">View code</a></div></div>
-        <div class="proj" data-tags="web data automation"><details><summary>Boxwatch</summary>
-          <p>Plans where your board games go on the shelf. It keeps a collection, pulls each game's stats from BoardGameGeek, and works out how to fit the boxes onto IKEA Kallax, Eket, and Billy shelving, sorted by the priorities you choose (player count, complexity, category, or any order). Each box is drawn to scale inside its cube, games can sit behind other games, and a checked-out game keeps its cube reserved. The live demo uses a sample shelf of well-known games, and your edits stay in your own browser. The full version runs locally and searches all of BoardGameGeek.</p>
-          <div class="tags"><span class="tag">Web app</span><span class="tag">Python</span><span class="tag">BoardGameGeek data</span></div>
-          </details><div class="actions"><a class="abtn live" href="https://krisrchesney.github.io/boxwatch/" target="_blank" rel="noopener">Open live page <span aria-hidden="true">&#8599;</span></a><a class="abtn code" href="https://github.com/krisrchesney/boxwatch" target="_blank" rel="noopener">View code</a></div></div>
-        <div class="proj" data-tags="ml data"><details><summary>Park Wait Forecast</summary>
-          <p>Forecasts whether an open theme-park ride's posted wait will be at least 45 minutes one hour from now. It is trained on ride wait snapshots collected every 10 minutes, served through a validated FastAPI endpoint, and monitored for data and performance drift. Tests guard against future information leaking into features, and the build prints a "wait stays the same" baseline that the model has to beat. The pipeline and tests are complete, and real-data results are not published yet.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Forecasting</span><span class="tag">Drift monitoring</span></div>
-          </details><div class="actions"><a class="abtn code" href="https://github.com/krisrchesney/park-wait-forecast" target="_blank" rel="noopener">View code</a></div></div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<section id="education">
-  <div class="wrap">
-    <div class="sec-head reveal"><div><div class="kicker">Education</div><h2>Education and certifications</h2></div></div>
-    <div class="edu reveal">
-      <div class="card"><b>M.S. Data Analytics</b><br>Western Governors University<br><small>2019 &middot; Learned Tableau here</small></div>
-      <div class="card"><b>B.S. Computer Science, minor in Business</b><br>California State University San Marcos<br><small>2018 &middot; 3.6 GPA &middot; Association for Computing Machinery</small></div>
-      <div class="card"><b>A.S. Computer Networks</b><br>Coleman College<br><small>2008 &middot; 3.7 GPA</small></div>
-    </div>
-    <div class="card reveal" style="padding:20px 24px;margin-top:14px">
-      <b>Certifications and honors</b>
-      <ul class="certs">
-        <li>Generative AI with Large Language Models, DeepLearning.AI and AWS (2024)</li>
-        <li>Data Science Professional Certificate, Coursera (2024)</li>
-        <li>Intro to Snowflake for Devs, Data Scientists, Data Engineers (2024)</li>
-        <li>SAS Certified Statistical Business Analyst (2019)</li>
-        <li>SAS Certified Base Programmer for SAS 9 (2019)</li>
-        <li>Oracle Database SQL Certified Associate</li>
-        <li>Splunk Certified Power User and Certified User (2018)</li>
-        <li>Bertelsmann Data Science Challenge Scholarship, Udacity (2018)</li>
-        <li>Apple Support certification (2014)</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="skills" style="background:var(--surface-2)">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div><div class="kicker">Skills</div><h2>Where each skill shows up</h2><p class="sub">Select a skill to highlight the roles, projects, and timeline bars that use it.</p></div>
-    </div>
-    <div id="skills-chips" class="reveal">
-      <div class="group"><h3>Leadership</h3><div class="chips">
-        <button class="chip" data-tag="leadership" aria-pressed="false">Team leadership</button>
-        <button class="chip" data-tag="strategy" aria-pressed="false">Technology strategy</button>
-        <button class="chip" data-tag="vendor" aria-pressed="false">Vendor management</button>
-        <button class="chip" data-tag="agile" aria-pressed="false">Agile and Scrum</button>
-      </div></div>
-      <div class="group"><h3>Platforms and identity</h3><div class="chips">
-        <button class="chip" data-tag="m365" aria-pressed="false">Microsoft 365</button>
-        <button class="chip" data-tag="identity" aria-pressed="false">Entra, AD, and SSO</button>
-        <button class="chip" data-tag="powershell" aria-pressed="false">PowerShell</button>
-        <button class="chip" data-tag="hubspot" aria-pressed="false">HubSpot</button>
-        <button class="chip" data-tag="jira" aria-pressed="false">Jira</button>
-        <button class="chip" data-tag="netsuite" aria-pressed="false">NetSuite</button>
-        <button class="chip" data-tag="web" aria-pressed="false">Webflow and web ops</button>
-        <button class="chip" data-tag="aws" aria-pressed="false">AWS</button>
-      </div></div>
-      <div class="group"><h3>Data and AI</h3><div class="chips">
-        <button class="chip" data-tag="data" aria-pressed="false">Data and ETL</button>
-        <button class="chip" data-tag="ml" aria-pressed="false">Machine learning</button>
-        <button class="chip" data-tag="security" aria-pressed="false">Security analytics</button>
-        <button class="chip" data-tag="ai" aria-pressed="false">Applied AI (Claude)</button>
-        <button class="chip" data-tag="automation" aria-pressed="false">Automation</button>
-      </div></div>
-    </div>
-    <div class="filter-status" id="fstatus" role="status"><span id="fcount"></span><button type="button" class="chip" id="fjump">Show matches</button><button type="button" class="chip" id="fclear">Clear filter</button></div>
-    <p class="note reveal">Tools used across roles: Jira Service Management, ServiceNow, Power Automate, Domo, Power BI, Tableau, SQL, Python, PostgreSQL, Athena, Snowflake, Twilio Segment, Elastic, Splunk, Zoom Phone, Hover, Oracle Opera, Delphi, iHotelier, n8n, Zapier.</p>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div>&copy; <span id="yr">2026</span> Kristopher Chesney &middot; Updated October 2026 &middot; Visits are counted with GoatCounter, which uses no cookies and collects no personal data.</div>
-    <div><a href="Kristopher-Chesney-Resume.pdf" download>Download resume (PDF)</a> &middot; <a href="https://www.linkedin.com/in/kristopher-chesney-88464880" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://github.com/krisrchesney" target="_blank" rel="noopener">GitHub</a> &middot; <a href="#top">Back to top</a></div>
-  </div>
-</footer>
-
+<div id="tltip" role="tooltip"></div>
 <script>
-(function(){
-  "use strict";
-  var root=document.documentElement;
-  function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
-  function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
-
-  /* Theme */
-  var savedTheme=load("theme");
-  if(savedTheme){root.setAttribute("data-theme",savedTheme)}
-  document.getElementById("theme").addEventListener("click",function(){
-    var cur=root.getAttribute("data-theme");
-    if(!cur){cur=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}
-    var next=cur==="dark"?"light":"dark";
-    root.setAttribute("data-theme",next);store("theme",next);
-  });
-
-  /* Email, assembled in script to keep it out of plain-text scrapers */
-  var mail=document.getElementById("mail");
-  var MAIL_PARTS=["kris.r.chesney","gmail.com"];   /* change the address here (and in the PDF) */
-  var addr=MAIL_PARTS.join("@");
-  mail.href="mai"+"lto:"+addr;
-  /* A plain mailto link does nothing on computers with no mail app, so show every option. */
-  var box=document.createElement("div");
-  box.className="mailbox";box.hidden=true;box.setAttribute("role","dialog");box.setAttribute("aria-modal","true");box.setAttribute("aria-label","Email Kristopher");
-  box.innerHTML='<div class="mailcard"><button type="button" class="mailx" aria-label="Close">&times;</button>'
-    +'<h3>Email me</h3><p class="mailaddr" id="mailaddr"></p>'
-    +'<div class="mailbtns"><button type="button" class="abtn live" id="mailcopy">Copy address</button>'
-    +'<a class="abtn code" id="mailgmail" target="_blank" rel="noopener">Open in Gmail &#8599;</a>'
-    +'<a class="abtn code" id="mailapp">Open mail app</a></div></div>';
-  document.body.appendChild(box);
-  var mailaddr=box.querySelector("#mailaddr"),mailcopy=box.querySelector("#mailcopy");
-  mailaddr.textContent=addr;
-  box.querySelector("#mailgmail").href="https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(addr)+"&su="+encodeURIComponent("Hello from your resume site");
-  box.querySelector("#mailapp").href="mai"+"lto:"+addr;
-  function mailShow(v){box.hidden=!v;if(v){mailcopy.textContent="Copy address";mailcopy.focus()}else{mail.focus()}}
-  mail.addEventListener("click",function(e){e.preventDefault();mailShow(true)});
-  box.addEventListener("click",function(e){if(e.target===box)mailShow(false)});
-  box.querySelector(".mailx").addEventListener("click",function(){mailShow(false)});
-  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!box.hidden)mailShow(false)});
-  mailcopy.addEventListener("click",function(){
-    function done(){mailcopy.textContent="Copied"}
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(addr).then(done,function(){sel()})}else{sel()}
-    function sel(){var r=document.createRange();r.selectNodeContents(mailaddr);var g=window.getSelection();g.removeAllRanges();g.addRange(r);try{document.execCommand("copy");done()}catch(x){mailcopy.textContent="Press Ctrl+C"}}
-  });
-
-  /* Simple / Detailed view */
-  var details=[].slice.call(document.querySelectorAll("#experience details"));
-  var bS=document.getElementById("v-simple"),bD=document.getElementById("v-detailed");
-  function setView(v,fromUser){
-    root.setAttribute("data-view",v);
-    bS.setAttribute("aria-pressed",v==="simple");bD.setAttribute("aria-pressed",v==="detailed");
-    if(fromUser){details.forEach(function(d){d.open=(v==="detailed")});store("view",v)}
-  }
-  bS.addEventListener("click",function(){setView("simple",true)});
-  bD.addEventListener("click",function(){setView("detailed",true)});
-  document.getElementById("open-all").addEventListener("click",function(){setView("detailed",true)});
-  document.getElementById("close-all").addEventListener("click",function(){setView("simple",true)});
-  var sv=load("view");if(sv==="detailed"){setView("detailed",true)}
-
-  /* Stat cards */
-  [].forEach.call(document.querySelectorAll(".stat"),function(s){
-    s.addEventListener("click",function(){s.setAttribute("aria-expanded",s.getAttribute("aria-expanded")==="true"?"false":"true")});
-  });
-
-  /* Count-up numbers and reveal on scroll */
-  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  function countUp(el){
-    var to=+el.getAttribute("data-to"),pre=el.getAttribute("data-prefix")||"",suf=el.getAttribute("data-suffix")||"";
-    if(reduce){el.textContent=pre+to+suf;return}
-    var t0=null,dur=900;
-    function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);el.textContent=pre+Math.round(to*e)+suf;if(p<1)requestAnimationFrame(f)}
-    requestAnimationFrame(f);
-  }
-  if("IntersectionObserver" in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){
-      if(e.isIntersecting){e.target.classList.add("in");[].forEach.call(e.target.querySelectorAll(".count"),countUp);io.unobserve(e.target)}
-    })},{threshold:.02,rootMargin:"0px 0px -4% 0px"});
-    [].forEach.call(document.querySelectorAll(".reveal"),function(el){io.observe(el)});
-    /* Safety net: never leave content hidden if an observer callback is missed. */
-    setTimeout(function(){[].forEach.call(document.querySelectorAll(".reveal:not(.in)"),function(el){
-      var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0){el.classList.add("in");[].forEach.call(el.querySelectorAll(".count"),countUp)}})},1600);
-  }else{[].forEach.call(document.querySelectorAll(".reveal"),function(el){el.classList.add("in")})}
-
-  /* Timeline */
-  var LANES=[
-    {id:"ent",name:"Enterprise technology"},{id:"sec",name:"Security and data science"},
-    {id:"sys",name:"Systems and IT"},{id:"mil",name:"Military"},{id:"edu",name:"Education"}
-  ];
-  var ITEMS=[
-    {lane:"ent",s:2025.29,e:2026.04,label:"Data Engineer",title:"Data Engineer",org:"Augustine Institute",dates:"Apr 2025 – Jan 2026",blurb:"Hired part-time, full-time from July 1. Supported data analytics across the company.",pts:["Dashboards, ETL pipelines, and data connections in Domo, Twilio Segment, PostgreSQL, and Athena","Built a NetSuite migration tool that cut file mapping and validation time by 85%","Rebuilt the All Parish Query and ran OKR tracking solo","Wrote the department's Data Governance Policy"],tags:"data aws automation netsuite"},
-    {lane:"ent",s:2026.04,e:2026.75,label:"Manager, Technology Services",title:"Manager, Technology Services",org:"Augustine Institute",dates:"Jan 2026 – Oct 2026",blurb:"Ran the IT service desk and took on platform, vendor, and identity projects.",pts:["IT staff reduced by 50% with faster response times and satisfaction maintained, for roughly 200 staff","$200K saved in one fiscal year","Claude triage tool cut resolution time by 25%; HubSpot workflows built from AI analysis of historic tickets cut incoming volume by 30%","Microsoft 365 audit in days instead of weeks","Led the team on Jira Service Management, set the SLAs, tracked all ticket types","Moved the help desk from NinjaOne to Jira; closed 161 requests, half of them within 4 days","HubSpot Service Desk live Sept 2026, with a Zoom Phone call tree"],tags:"leadership vendor m365 identity hubspot ai jira web"},
-    {lane:"ent",s:2026.75,e:2026.79,label:"Sr. Manager",title:"Sr. Manager, Enterprise Technology",org:"Augustine Institute",dates:"Oct 2026",blurb:"Led data science, systems administration, and tech support.",pts:["Led a team of four","Designed an Entra and cross-platform SSO plan that met cyber insurance requirements without MFA fatigue","Prototyped several website redesigns using Claude"],tags:"leadership strategy identity web"},
-    {lane:"sec",s:2017.33,e:2017.67,label:"REU",title:"BIGDatA REU",org:"New Mexico State University",dates:"May – Aug 2017",blurb:"Research internship analyzing the reliability of large storage systems.",pts:["Python in Jupyter with NumPy, Pandas, Seaborn, and scikit-learn"],tags:"data ml"},
-    {lane:"sec",s:2018.33,e:2018.92,label:"Analyst",title:"Cybersecurity Analyst",org:"Proficio",dates:"May – Dec 2018",blurb:"Triaged security incidents across a multi-tenant environment.",pts:["First role at Proficio, a managed security services provider"],tags:"security"},
-    {lane:"sec",s:2018.92,e:2019.92,label:"Content Dev. Engineer",title:"Cybersecurity Content Development Engineer",org:"Proficio",dates:"Dec 2018 – Dec 2019",blurb:"Promoted from Cybersecurity Analyst.",pts:[],tags:"security"},
-    {lane:"sec",s:2019.92,e:2021.0,label:"Use Case Architect",title:"Strategic Use Case Architect",org:"Proficio",dates:"Dec 2019 – Jan 2021",blurb:"Designed alerts for many clients at once.",pts:["Analyzed security logs and researched attack techniques to build multi-tenant and client-specific alerts","Led a project to standardize data ingestion from disparate sources"],tags:"security data"},
-    {lane:"sec",s:2021.0,e:2022.25,label:"Data Scientist",title:"Strategic Data Scientist",org:"Proficio",dates:"Jan 2021 – Apr 2022",blurb:"Moved from alert design into data science.",pts:["Designed unsupervised ML models for anomaly detection in Elastic","Built visualizations and reports for threat hunting and investigation teams","Built data enrichment pipelines across teams"],tags:"ml data security"},
-    {lane:"sec",s:2022.25,e:2024.67,label:"Data Science Manager",title:"Data Science Manager",org:"Proficio",dates:"Apr 2022 – Aug 2024",blurb:"Led data science for the machine learning behind a managed security service.",pts:["A/B test of AI that researches security alerts showed a 24% drop in analyst investigation time","Cut log volume 26% with a data cleaning strategy","ML alerts that correlate multiple anomalies, plus anomaly enrichment through FortiSOAR","Patent pending on the platform's multi-client ML architecture"],tags:"ml data ai security leadership agile jira"},
-    {lane:"sys",s:2007.67,e:2011.12,label:"PC Technician",title:"PC Technician",org:"Pacific Marine Credit Union",dates:"Sep 2007 – Feb 2011",blurb:"Desktop and Windows support for the whole organization.",pts:["Started in IT support at a credit union in Oceanside, CA"],tags:"systems"},
-    {lane:"sys",s:2011.12,e:2013.67,label:"Systems Administrator",title:"Systems Administrator",org:"Pacific Marine Credit Union",dates:"Feb 2011 – Aug 2013",blurb:"Managed servers and backups and gave Windows support across the organization.",pts:["Moved from PC Technician into systems administration","About 8 branches and 250+ staff","Rolled out application security and user automation programs"],tags:"systems identity"},
-    {lane:"sys",s:2013.67,e:2014.67,label:"Technical Consultant",title:"Technical Consultant",org:"TheCloudLounge, Auckland, NZ",dates:"Sep 2013 – Aug 2014",blurb:"Implemented cloud point-of-sale systems and led support.",pts:["Rolled out to about 8 clients and supported about twice that","Led one support person; phone, email, and on-site hardware and software support, many iPads","Trained clients on the software and hardware"],tags:"systems leadership"},
-    {lane:"sys",s:2014.67,e:2015.67,label:"Systems Analyst II",title:"Systems Analyst II",org:"TechMD, Costa Mesa, CA",dates:"Sep 2014 – Aug 2015",blurb:"Assessed the IT needs of small and mid-sized business clients and delivered the solutions.",pts:["Mostly Windows-based work: networks, hardware, and heavy Microsoft 365 support","Wrote documentation and helped define a new organizational structure","Apple Support certification (2014)"],tags:"systems"},
-    {lane:"mil",s:2005.58,e:2011.58,label:"USMC Reserves",title:"Aviation Logistics Information Systems Specialist",org:"USMC Reserves, Miramar, CA",dates:"Aug 2005 – Aug 2011",blurb:"Computer and network maintenance on the air base.",pts:["Led a team of 6 to 8 Marines","Aviation supply network systems and their backups","Held a Secret clearance (not current)"],tags:"leadership systems"},
-    {lane:"edu",s:2006.5,e:2008.5,label:"Coleman",title:"A.S. Computer Networks",org:"Coleman College",dates:"2006 – 2008",blurb:"3.7 GPA.",pts:[],tags:"systems"},
-    {lane:"edu",s:2015.58,e:2018.42,label:"B.S. Computer Science",title:"B.S. Computer Science, minor in Business",org:"California State University San Marcos",dates:"Aug 2015 – May 2018",blurb:"3.6 GPA. Association for Computing Machinery.",pts:[],tags:"data"},
-    {lane:"edu",s:2018.83,e:2019.83,label:"M.S.",title:"M.S. Data Analytics",org:"Western Governors University",dates:"Nov 2018 – Oct 2019",blurb:"Online master's degree alongside full-time work.",pts:[],tags:"data ml"},
-    {lane:"edu",s:2024.67,e:2024.9,label:"Certs",title:"2024 certifications",org:"Generative AI, Snowflake, Data Science",dates:"Sep – Oct 2024",blurb:"Generative AI with Large Language Models, Intro to Snowflake, and the Coursera Data Science Professional Certificate.",pts:[],tags:"ai data ml"}
-  ];
-  var tl=document.getElementById("tl"),panel=document.getElementById("tl-detail");
-  var range=[2005,2027],selected=null,activeTag=null;
-  function pct(y){return(y-range[0])/(range[1]-range[0])*100}
-  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-  function showDetail(i){
-    var it=ITEMS[i];selected=i;
-    var col=getComputedStyle(root).getPropertyValue("--l-"+it.lane).trim();
-    var h="<h3>"+esc(it.title)+"</h3><div class=\"dates\">"+esc(it.org)+" &middot; "+esc(it.dates)+"</div><p>"+esc(it.blurb)+"</p>";
-    if(it.pts.length){h+="<ul>"+it.pts.map(function(p){return"<li>"+esc(p)+"</li>"}).join("")+"</ul>"}
-    panel.innerHTML=h;panel.style.borderLeftColor=col;
-    [].forEach.call(tl.querySelectorAll(".bar"),function(b){b.setAttribute("aria-pressed",b.getAttribute("data-i")==i)});
-  }
-  function draw(){
-    var span=range[1]-range[0],step=span>15?5:(span>6?1:0.5);
-    var html="";
-    var first=Math.ceil(range[0]/step)*step,ticks="",grid="";
-    for(var y=first;y<=range[1]+0.001;y+=step){
-      var p=pct(y);if(p<0||p>100)continue;
-      var lab=(y%1===0)?y:(y+"").replace(".5",".5");
-      ticks+="<span class=\"tick\" style=\"left:"+p+"%\">"+(y%1===0?y:"")+"</span>";
-      grid+="<span class=\"gridline\" style=\"left:"+p+"%\"></span>";
-    }
-    LANES.forEach(function(L){
-      html+="<div class=\"lane\"><div class=\"lane-name\">"+esc(L.name)+"</div>"+grid;
-      ITEMS.forEach(function(it,i){
-        if(it.lane!==L.id||it.e<range[0]||it.s>range[1])return;
-        var s=Math.max(it.s,range[0]),e=Math.min(it.e,range[1]);
-        var left=pct(s),w=Math.max(pct(e)-pct(s),0.45);
-        html+="<button type=\"button\" class=\"bar "+it.lane+"\" data-i=\""+i+"\" data-tags=\""+it.tags+"\" aria-pressed=\"false\" style=\"left:"+left+"%;width:calc("+w+"% - 2px)\" title=\""+esc(it.title+" · "+it.dates)+"\">"+esc(it.label)+"</button>";
-      });
-      html+="</div>";
-    });
-    tl.innerHTML=html+"<div class=\"axis\" style=\"margin-left:0\"><div style=\"position:absolute;left:0;right:0\">"+ticks+"</div></div>";
-    [].forEach.call(tl.querySelectorAll(".bar"),function(b){b.addEventListener("click",function(){showDetail(+b.getAttribute("data-i"))})});
-    if(selected!==null){showDetail(selected)}
-    applyFilter();
-  }
-  [].forEach.call(document.querySelectorAll("[data-range]"),function(b){
-    b.addEventListener("click",function(){
-      var r=b.getAttribute("data-range").split(",").map(Number);range=r;
-      [].forEach.call(document.querySelectorAll("[data-range]"),function(x){x.setAttribute("aria-pressed",x===b)});
-      draw();
-    });
-  });
-
-  /* Skill filter */
-  var chips=[].slice.call(document.querySelectorAll(".chip[data-tag]"));
-  var fstatus=document.getElementById("fstatus"),fcount=document.getElementById("fcount");
-  function applyFilter(){
-    var els=[].slice.call(document.querySelectorAll("[data-tags]"));
-    var n=0;
-    els.forEach(function(el){
-      el.classList.remove("is-dim","is-match");
-      if(!activeTag)return;
-      var has=(" "+el.getAttribute("data-tags")+" ").indexOf(" "+activeTag+" ")>-1;
-      if(has){el.classList.add("is-match");n++}else{el.classList.add("is-dim")}
-    });
-    fstatus.classList.toggle("on",!!activeTag);
-    if(activeTag){
-      var name=chips.filter(function(c){return c.getAttribute("data-tag")===activeTag})[0].textContent;
-      fcount.textContent=n+" matching items for “"+name+"” across the timeline, roles, and projects.";
-    }
-  }
-  chips.forEach(function(c){
-    c.addEventListener("click",function(){
-      var t=c.getAttribute("data-tag");activeTag=(activeTag===t)?null:t;
-      chips.forEach(function(x){x.setAttribute("aria-pressed",x.getAttribute("data-tag")===activeTag)});
-      if(activeTag){
-        /* In the simple view, project cards are hidden, so show the detail to make matches visible. */
-        if(root.getAttribute("data-view")==="simple"){setView("detailed",true)}
-      }
-      applyFilter();
-    });
-  });
-  document.getElementById("fjump").addEventListener("click",function(){
-    var t=document.querySelector("#experience .is-match")||document.querySelector("#timeline .is-match");
-    if(t){t.scrollIntoView({block:"center"})}
-  });
-  document.getElementById("fclear").addEventListener("click",function(){
-    activeTag=null;chips.forEach(function(x){x.setAttribute("aria-pressed","false")});applyFilter();
-  });
-
-  /* Projects dropdown */
-  var ddBtn=document.getElementById("dd-btn"),ddMenu=document.getElementById("dd-menu");
-  function ddSet(open){ddMenu.classList.toggle("open",open);ddBtn.setAttribute("aria-expanded",open)}
-  ddBtn.addEventListener("click",function(e){e.stopPropagation();ddSet(!ddMenu.classList.contains("open"))});
-  document.addEventListener("click",function(e){if(!ddMenu.contains(e.target))ddSet(false)});
-  document.addEventListener("keydown",function(e){if(e.key==="Escape"){ddSet(false);ddBtn.focus()}});
-  [].forEach.call(ddMenu.querySelectorAll('a[href^="#"]'),function(a){a.addEventListener("click",function(){
-    if(root.getAttribute("data-view")==="simple"){/* keep simple view; project cards are already visible */}
-    ddSet(false)})});
-
-  /* Scroll spy */
-  var secs=["impact","timeline","experience","skills","education"].map(function(id){return document.getElementById(id)});
-  var links=[].slice.call(document.querySelectorAll(".links a"));
-  window.addEventListener("scroll",function(){
-    var y=window.scrollY+120,cur=null;
-    secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
-    links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+cur)});
-  },{passive:true});
-
-  document.getElementById("yr").textContent=new Date().getFullYear();
-  /* On phones, open on the recent years and scroll to the right edge, where the newest work is. */
-  var narrow=window.innerWidth<700;
-  if(narrow){
-    range=[2017,2027];
-    [].forEach.call(document.querySelectorAll("[data-range]"),function(x){x.setAttribute("aria-pressed",x.getAttribute("data-range")==="2017,2027")});
-  }
-  draw();showDetail(1);
-  if(narrow){var sc=document.querySelector(".tl-scroll");sc.scrollLeft=sc.scrollWidth}
+var N=[["aug", "Augustine Institute", "role", "Sr. Manager, Enterprise Technology", "#augustine"], ["pro", "Proficio", "role", "Data Science Manager", "#proficio"], ["pay", "Payments Ops Analyst", "proj", "Tests an AI agent on simulated payment incidents", "#proj-pay"], ["evals", "Agent Team Evals", "proj", "Do teams of AI agents beat one agent?", "#proj-evals"], ["council", "ShowMe Council", "proj", "Fact-checked summaries of city council records", "#proj-council"], ["kev", "KEV Watch", "proj", "Ranks new vulnerabilities by exploit risk", "#proj-kev"], ["gh", "GitHub Issues Triage", "proj", "Predicts which new issues will stall", "#proj-gh"], ["box", "Boxwatch", "proj", "Plans board game shelves", "#proj-box"], ["park", "Park Wait Forecast", "proj", "Forecasts ride wait times", "#proj-park"], ["hubspot", "HubSpot", "skill", "Customer Support platform", ""], ["entra", "Entra and SSO", "skill", "Identity and sign-on plan", ""], ["m365", "Microsoft 365", "skill", "Audit and remediation plan", ""], ["elastic", "Elastic", "skill", "ML models and alerts", ""], ["ml", "Machine learning", "skill", "", ""], ["python", "Python", "skill", "", ""], ["dbx", "Databricks", "skill", "", ""], ["claude", "Claude", "skill", "AI tools and agents", ""], ["sql", "SQL", "skill", "", ""], ["pbi", "Power BI", "skill", "", ""], ["jira", "Jira", "skill", "Planning and requirements", ""], ["pipe", "Data pipelines", "skill", "", ""], ["reu", "BIGDatA REU", "role", "Research internship, 2017", "#role-reu"], ["tmd", "TechMD", "role", "Systems Analyst II, 2014 to 2015", "#role-tmd"], ["tcl", "TheCloudLounge", "role", "Technical Consultant, 2013 to 2014", "#role-tcl"], ["pmcu", "Pacific Marine CU", "role", "Systems Administrator, 2007 to 2013", "#role-pmcu"], ["usmc", "USMC Reserves", "role", "Aviation logistics information systems, 2005 to 2011", "#role-usmc"], ["tableau", "Tableau", "skill", "", ""], ["teamlead", "Team leadership", "skill", "", ""], ["sysadmin", "Systems administration", "skill", "", ""], ["winsupport", "Windows support", "skill", "", ""], ["servers", "Servers and backups", "skill", "", ""], ["training", "Training materials", "skill", "", ""], ["netmaint", "Network maintenance", "skill", "", ""], ["itassess", "Client IT assessments", "skill", "", ""], ["domo", "Domo", "skill", "ETL, dashboards and budget forecasts", ""], ["psh", "PowerShell", "skill", "Onboarding and offboarding tool", ""], ["netsuite", "NetSuite", "skill", "Migration tool, 85% faster", ""], ["jsm", "Jira Service Management", "skill", "Help desk, SLAs and escalations", ""], ["pa", "Power Automate", "skill", "Stipend approval workflow", ""], ["web", "Webflow and AWS", "skill", "Website work, DNS and redirects", ""], ["auto", "n8n and Zapier", "skill", "Workflow automation", ""], ["snow", "ServiceNow", "skill", "Alerts sent as tickets", ""], ["splunk", "Splunk", "skill", "Certified Power User", ""], ["agile", "Agile and Scrum", "skill", "Sprints and user stories", ""]],E=[["aug", "hubspot"], ["aug", "entra"], ["aug", "m365"], ["aug", "claude"], ["aug", "jira"], ["aug", "pipe"], ["pro", "elastic"], ["pro", "ml"], ["pro", "pbi"], ["pro", "jira"], ["pro", "python"], ["pay", "dbx"], ["pay", "claude"], ["pay", "sql"], ["pay", "python"], ["pay", "jira"], ["evals", "claude"], ["evals", "python"], ["council", "claude"], ["council", "python"], ["council", "pipe"], ["kev", "ml"], ["kev", "python"], ["gh", "ml"], ["gh", "python"], ["box", "python"], ["park", "ml"], ["park", "python"], ["hubspot", "claude"], ["dbx", "pipe"], ["sql", "pipe"], ["elastic", "ml"], ["reu", "python"], ["reu", "tableau"], ["pmcu", "sysadmin"], ["pmcu", "servers"], ["pmcu", "winsupport"], ["tmd", "itassess"], ["tcl", "teamlead"], ["tcl", "training"], ["usmc", "teamlead"], ["usmc", "netmaint"], ["aug", "teamlead"], ["pro", "teamlead"], ["aug", "sysadmin"], ["aug", "domo"], ["aug", "psh"], ["aug", "netsuite"], ["aug", "jsm"], ["aug", "pa"], ["aug", "web"], ["aug", "auto"], ["aug", "agile"], ["pro", "agile"], ["pro", "snow"], ["pro", "splunk"]],ITEMS=[{"lane": "ent", "s": 2025.29, "e": 2026.04, "label": "Data Engineer", "title": "Data Engineer", "org": "Augustine Institute", "dates": "Apr 2025 \u2013 Jan 2026", "blurb": "Hired part-time, full-time from July 1. Supported data analytics across the company.", "pts": ["Dashboards, ETL pipelines, and data connections in Domo, Twilio Segment, PostgreSQL, and Athena", "Built a NetSuite migration tool that cut file mapping and validation time by 85%", "Rebuilt the All Parish Query and ran OKR tracking solo", "Wrote the department's Data Governance Policy"], "tags": "data aws automation netsuite", "to": "r-data-engineer"}, {"lane": "ent", "s": 2026.04, "e": 2026.75, "label": "Manager, Technology Services", "title": "Manager, Technology Services", "org": "Augustine Institute", "dates": "Jan 2026 \u2013 Oct 2026", "blurb": "Ran the IT service desk and took on platform, vendor, and identity projects.", "pts": ["IT staff reduced by 50% with faster response times and satisfaction maintained, for roughly 200 staff", "$200K saved in one fiscal year", "Claude triage tool cut resolution time by 25%; HubSpot workflows built from AI analysis of historic tickets cut incoming volume by 30%", "Microsoft 365 audit in days instead of weeks", "Led the team on Jira Service Management, set the SLAs, tracked all ticket types", "Moved the help desk from NinjaOne to Jira; closed 161 requests, half of them within 4 days", "HubSpot Service Desk live Sept 2026, with a Zoom Phone call tree"], "tags": "leadership vendor m365 identity hubspot ai jira web", "to": "r-manager"}, {"lane": "ent", "s": 2026.75, "e": 2026.79, "label": "Sr. Manager", "title": "Sr. Manager, Enterprise Technology", "org": "Augustine Institute", "dates": "Oct 2026", "blurb": "Led data science, systems administration, and tech support.", "pts": ["Led a team of four", "Designed an Entra and cross-platform SSO plan that met cyber insurance requirements without MFA fatigue", "Prototyped several website redesigns using Claude"], "tags": "leadership strategy identity web", "to": "r-sr-manager"}, {"lane": "sec", "s": 2017.33, "e": 2017.67, "label": "REU", "title": "BIGDatA REU", "org": "New Mexico State University", "dates": "May \u2013 Aug 2017", "blurb": "Research internship analyzing the reliability of large storage systems.", "pts": ["Python in Jupyter with NumPy, Pandas, Seaborn, and scikit-learn"], "tags": "data ml", "to": "role-reu"}, {"lane": "sec", "s": 2018.33, "e": 2018.92, "label": "Analyst", "title": "Cybersecurity Analyst", "org": "Proficio", "dates": "May \u2013 Dec 2018", "blurb": "Triaged security incidents across a multi-tenant environment.", "pts": ["First role at Proficio, a managed security services provider"], "tags": "security", "to": "r-cyber"}, {"lane": "sec", "s": 2018.92, "e": 2019.92, "label": "Content Dev. Engineer", "title": "Cybersecurity Content Development Engineer", "org": "Proficio", "dates": "Dec 2018 \u2013 Dec 2019", "blurb": "Promoted from Cybersecurity Analyst.", "pts": [], "tags": "security", "to": "r-cyber"}, {"lane": "sec", "s": 2019.92, "e": 2021.0, "label": "Use Case Architect", "title": "Strategic Use Case Architect", "org": "Proficio", "dates": "Dec 2019 \u2013 Jan 2021", "blurb": "Designed alerts for many clients at once.", "pts": ["Analyzed security logs and researched attack techniques to build multi-tenant and client-specific alerts", "Led a project to standardize data ingestion from disparate sources"], "tags": "security data", "to": "r-usecase"}, {"lane": "sec", "s": 2021.0, "e": 2022.25, "label": "Data Scientist", "title": "Strategic Data Scientist", "org": "Proficio", "dates": "Jan 2021 \u2013 Apr 2022", "blurb": "Moved from alert design into data science.", "pts": ["Designed unsupervised ML models for anomaly detection in Elastic", "Built visualizations and reports for threat hunting and investigation teams", "Built data enrichment pipelines across teams"], "tags": "ml data security", "to": "r-datascientist"}, {"lane": "sec", "s": 2022.25, "e": 2024.67, "label": "Data Science Manager", "title": "Data Science Manager", "org": "Proficio", "dates": "Apr 2022 \u2013 Aug 2024", "blurb": "Led data science for the machine learning behind a managed security service.", "pts": ["A/B test of AI that researches security alerts showed a 24% drop in analyst investigation time", "Cut log volume 26% with a data cleaning strategy", "ML alerts that correlate multiple anomalies, plus anomaly enrichment through FortiSOAR", "Patent pending on the platform's multi-client ML architecture"], "tags": "ml data ai security leadership agile jira", "to": "r-dsm"}, {"lane": "sys", "s": 2007.67, "e": 2011.12, "label": "PC Technician", "title": "PC Technician", "org": "Pacific Marine Credit Union", "dates": "Sep 2007 \u2013 Feb 2011", "blurb": "Desktop and Windows support for the whole organization.", "pts": ["Started in IT support at a credit union in Oceanside, CA"], "tags": "systems", "to": "role-pmcu"}, {"lane": "sys", "s": 2011.12, "e": 2013.67, "label": "Systems Administrator", "title": "Systems Administrator", "org": "Pacific Marine Credit Union", "dates": "Feb 2011 \u2013 Aug 2013", "blurb": "Managed servers and backups and gave Windows support across the organization.", "pts": ["Moved from PC Technician into systems administration", "About 8 branches and 250+ staff", "Rolled out application security and user automation programs"], "tags": "systems identity", "to": "role-pmcu"}, {"lane": "sys", "s": 2013.67, "e": 2014.67, "label": "Technical Consultant", "title": "Technical Consultant", "org": "TheCloudLounge, Auckland, NZ", "dates": "Sep 2013 \u2013 Aug 2014", "blurb": "Implemented cloud point-of-sale systems and led support.", "pts": ["Rolled out to about 8 clients and supported about twice that", "Led one support person; phone, email, and on-site hardware and software support, many iPads", "Trained clients on the software and hardware"], "tags": "systems leadership", "to": "role-tcl"}, {"lane": "sys", "s": 2014.67, "e": 2015.67, "label": "Systems Analyst II", "title": "Systems Analyst II", "org": "TechMD, Costa Mesa, CA", "dates": "Sep 2014 \u2013 Aug 2015", "blurb": "Assessed the IT needs of small and mid-sized business clients and delivered the solutions.", "pts": ["Mostly Windows-based work: networks, hardware, and heavy Microsoft 365 support", "Wrote documentation and helped define a new organizational structure", "Apple Support certification (2014)"], "tags": "systems", "to": "role-tmd"}, {"lane": "mil", "s": 2005.58, "e": 2011.58, "label": "USMC Reserves", "title": "Aviation Logistics Information Systems Specialist", "org": "USMC Reserves, Miramar, CA", "dates": "Aug 2005 \u2013 Aug 2011", "blurb": "Computer and network maintenance on the air base.", "pts": ["Led a team of 6 to 8 Marines", "Aviation supply network systems and their backups", "Held a Secret clearance (not current)"], "tags": "leadership systems", "to": "role-usmc"}, {"lane": "edu", "s": 2006.5, "e": 2008.5, "label": "Coleman", "title": "A.S. Computer Networks", "org": "Coleman College", "dates": "2006 \u2013 2008", "blurb": "3.7 GPA.", "pts": [], "tags": "systems", "to": "education"}, {"lane": "edu", "s": 2015.58, "e": 2018.42, "label": "B.S. Computer Science", "title": "B.S. Computer Science, minor in Business", "org": "California State University San Marcos", "dates": "Aug 2015 \u2013 May 2018", "blurb": "3.6 GPA.", "pts": [], "tags": "data", "to": "education"}, {"lane": "edu", "s": 2018.83, "e": 2019.83, "label": "M.S.", "title": "M.S. Data Analytics", "org": "Western Governors University", "dates": "Nov 2018 \u2013 Oct 2019", "blurb": "Online master's degree alongside full-time work.", "pts": [], "tags": "data ml", "to": "education"}, {"lane": "edu", "s": 2024.67, "e": 2024.9, "label": "Certs", "title": "2024 certifications", "org": "Generative AI, Snowflake, Data Science", "dates": "Sep \u2013 Oct 2024", "blurb": "Generative AI with Large Language Models, Intro to Snowflake, and the Coursera Data Science Professional Certificate.", "pts": [], "tags": "ai data ml", "to": "education"}],PAL={"Blue and silver": {"l": ["#f2f5f9", "#18202e", "#2c5cb4", "#c4762b"], "d": ["#0e141d", "#e4e9f0", "#78a2ef", "#e3a35f"]}, "Navy and gold": {"l": ["#f4f5f8", "#141b2b", "#27437f", "#b8892e"], "d": ["#0d121c", "#e6e8ee", "#8aa5e6", "#e0b857"]}, "Teal and silver": {"l": ["#f1f6f6", "#142226", "#1f7a7a", "#c46a3a"], "d": ["#0d1719", "#e2eded", "#5fc4c0", "#e8955f"]}, "Forest and sand": {"l": ["#f4f6f1", "#1f2a22", "#2f6b4f", "#b07a2a"], "d": ["#131a15", "#e4ebe4", "#6fbf94", "#d9a441"]}, "Plum and teal": {"l": ["#f7f4f7", "#241d28", "#7a3a8c", "#2f8f83"], "d": ["#17121a", "#ece4ef", "#c58ad8", "#5fc5b8"]}, "Graphite": {"l": ["#f6f6f4", "#1a1a1a", "#1a1a1a", "#7a7a7a"], "d": ["#141414", "#eeeeee", "#eeeeee", "#9a9a9a"]}},by={},adj={},st={pal:'Blue and silver',mode:'light',accent:null};
+N=N.map(function(n){var o={id:n[0],label:n[1],kind:n[2],cap:n[3],to:n[4]};by[o.id]=o;return o});
+/* only the two most recent roles, the projects, and the tools they use */
+(function(){var keepR={aug:1,pro:1},ke=E.filter(function(e){var a=by[e[0]],b=by[e[1]];return (a.kind!=='role'||keepR[a.id])&&(b.kind!=='role'||keepR[b.id])}),used={};ke.forEach(function(e){used[e[0]]=used[e[1]]=1});
+ N=N.filter(function(n){return n.kind==='role'?!!keepR[n.id]:(n.kind==='proj'||!!used[n.id])});E=ke;
+ E.forEach(function(e){(adj[e[0]]=adj[e[0]]||[]).push(e[1]);(adj[e[1]]=adj[e[1]]||[]).push(e[0])})})();
+function css(v){return getComputedStyle(document.documentElement).getPropertyValue(v).trim()}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function clamp(x){return Math.max(0,Math.min(1,x))}
+var PROV=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* Augustine far left, Proficio far right, projects and tools spread over the top and bottom arcs */
+var TOP=['entra','m365','psh','auto','hubspot','pay','claude','web','evals','council','pipe','domo','kev','ml','splunk'],BOT=['sysadmin','netsuite','jira','jsm','pa','sql','gh','dbx','box','agile','teamlead','park','python','pbi','snow','elastic'];
+function rad(n){return n.kind==='role'?10:n.kind==='proj'?7:4.4}
+function place(cx,cy,Rx,Ry){var p={_c:[cx,cy]};p.aug={x:cx-Rx,y:cy,k:0};p.pro={x:cx+Rx,y:cy,k:1};
+ TOP.forEach(function(id,k){var a=Math.PI+(k+1)/(TOP.length+1)*Math.PI;p[id]={x:cx+Math.cos(a)*Rx,y:cy+Math.sin(a)*Ry,k:k}});
+ BOT.forEach(function(id,k){var a=Math.PI-(k+1)/(BOT.length+1)*Math.PI;p[id]={x:cx+Math.cos(a)*Rx,y:cy+Math.sin(a)*Ry,k:k}});return p}
+/* one drawing routine, used twice: the quiet one around the intro and the full one with pulses and every label */
+function makeNet(cfg){
+ var cv=cfg.cv,ctx=cv.getContext('2d'),tipEl=cfg.tip,W=0,H=0,dpr=Math.min(2,window.devicePixelRatio||1),PA={_c:[0,0]},rect={x:0,y:0,w:0,h:0},mouse={x:-999,y:-999},hov=null,pulses=[],bag=[],lit={},nextPulse=0,lastSrc=null;
+ function layout(){var r=cv.getBoundingClientRect();if(!r.width||!r.height)return;W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+  var c=cfg.center.getBoundingClientRect(),hr=cfg.host.getBoundingClientRect();rect={x:c.left-hr.left+c.width/2,y:c.top-hr.top+c.height/2,w:c.width/2+34,h:c.height/2+28};
+  var Rx=Math.max(rect.w+70,Math.min(W/2-95,600)),Ry=Math.max(rect.h+70,H/2-(cfg.labelsAll?80:70));PA=place(rect.x,rect.y,Rx,Ry)}
+ function ctrl(){return PA._c}
+ function qpt(p,q,c,t){var u=1-t;return {x:u*u*p.x+2*u*t*c[0]+t*t*q.x,y:u*u*p.y+2*u*t*c[1]+t*t*q.y}}
+ /* a light travels from a role or project down each of its links; every role and project goes once before any repeats */
+ function startPulse(now){var ok={};N.forEach(function(n){if(n.kind!=='skill'&&adj[n.id]&&adj[n.id].length)ok[n.id]=1});bag=bag.filter(function(id){return ok[id]});
+  if(!bag.length){bag=Object.keys(ok);for(var i=bag.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=bag[i];bag[i]=bag[j];bag[j]=t}if(bag.length>1&&bag[bag.length-1]===lastSrc)bag.unshift(bag.pop())}
+  if(!bag.length)return;var src=bag.pop(),k=0;lastSrc=src;
+  E.forEach(function(e,ei){if(e[0]===src||e[1]===src)pulses.push({ei:ei,fw:e[0]===src,src:src,dst:e[0]===src?e[1]:e[0],t0:now+(k++)*110,dur:1300+Math.random()*500})});
+  nextPulse=now+3300+Math.random()*1900}
+ function lab(n,p,r){var cx=PA._c[0],cy=PA._c[1],ang=Math.atan2(p.y-cy,p.x-cx),c=Math.cos(ang),s=Math.sin(ang);
+  if(n.kind==='role')return {x:p.x,y:p.y+r+20,al:'center'};
+  if(Math.abs(c)<.4){var ex=cfg.labelsAll?(p.k%2)*14:0;return {x:p.x,y:s<0?p.y-r-8-ex:p.y+r+17+ex,al:'center'}}
+  return {x:p.x+c*(r+9),y:p.y+s*(r+9)+4,al:c>0?'left':'right'}}
+ function draw(now){var o=cfg.opacity();cv.style.opacity=o;cv.style.pointerEvents=o<.2?'none':'auto';
+  if(!W||o<=.01){if(W)ctx.clearRect(0,0,W,H);tipEl.style.opacity=0;hov=null;return}
+  var ink=css('--ink'),acc=css('--accent'),acc2=css('--accent2'),bg=css('--bg'),mu=css('--muted');ctx.clearRect(0,0,W,H);
+  hov=null;if(o>=.2){var best=22;N.forEach(function(n){var p=PA[n.id],d=Math.hypot(p.x-mouse.x,p.y-mouse.y);if(d<best){best=d;hov=n}})}
+  var a=hov?hov.id:null,near=a?(adj[a]||[]):[];
+  if(cfg.pulses&&!PROV&&!document.hidden&&cfg.active()){if(!nextPulse)nextPulse=now+700;if(now>nextPulse)startPulse(now)}
+  var gl={},c=ctrl();pulses=pulses.filter(function(p){return now-p.t0<p.dur+900});pulses.forEach(function(p){var age=now-p.t0;if(age>0)gl[p.ei]=Math.max(gl[p.ei]||0,1-age/(p.dur+900))});
+  E.forEach(function(e,ei){var on=a&&(e[0]===a||e[1]===a),p=PA[e[0]],q=PA[e[1]],g=gl[ei]||0;ctx.globalAlpha=Math.max(on?.95:(a?.05:(cfg.pulses?.22:.16)),g*.75);ctx.strokeStyle=on?acc:(g>.05?acc2:ink);ctx.lineWidth=on?1.9:(g>.05?1.4:1);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.quadraticCurveTo(c[0],c[1],q.x,q.y);ctx.stroke()});
+  N.forEach(function(n){var p=PA[n.id],on=n.id===a,nb=near.indexOf(n.id)>=0,dim=a&&!on&&!nb,r=rad(n),lk=n.kind==='skill'&&lit[n.id]>now;
+   ctx.globalAlpha=dim?.28:1;ctx.beginPath();ctx.arc(p.x,p.y,r+(on?2:0),0,6.283);
+   if(n.kind==='skill'){ctx.fillStyle=on||nb||lk?acc:mu;ctx.fill()}else if(n.kind==='proj'){ctx.fillStyle=bg;ctx.fill();ctx.lineWidth=2;ctx.strokeStyle=on||nb?acc:ink;ctx.stroke()}else{ctx.fillStyle=acc2;ctx.fill()}
+   if(n.kind==='skill'&&!cfg.labelsAll&&!on&&!nb)return;
+   var L=lab(n,p,r),al=L.al,tx=L.x;ctx.font=(n.kind==='role'?'800 15px':n.kind==='proj'?'600 12.5px':'500 11.5px')+' Figtree,system-ui,sans-serif';var tw0=ctx.measureText(n.label).width;
+   if(al==='right'&&tx-tw0<8){al='left';tx=p.x+r+9}if(al==='left'&&tx+tw0>W-8){al='right';tx=p.x-r-9}if(al==='center'){if(tx-tw0/2<8)tx=8+tw0/2;if(tx+tw0/2>W-8)tx=W-8-tw0/2}
+   ctx.textAlign=al;ctx.fillStyle=n.kind==='role'?acc2:ink;ctx.fillText(n.label,tx,L.y)});
+  pulses.forEach(function(p){var age=now-p.t0,e=E[p.ei];if(!e||age<0)return;var s=PA[p.src],d=PA[p.dst];if(!s||!d)return;var A=PA[e[0]],B=PA[e[1]];
+   if(age<700){ctx.globalAlpha=.55*(1-age/700);ctx.strokeStyle=acc2;ctx.lineWidth=2;ctx.beginPath();ctx.arc(s.x,s.y,rad(by[p.src])+2+age/700*22,0,6.283);ctx.stroke()}
+   if(age<p.dur){var t=.5-.5*Math.cos(Math.PI*age/p.dur);ctx.shadowColor=acc2;ctx.shadowBlur=14;
+    for(var k=5;k>=0;k--){var u=Math.max(0,t-k*.022),uu=p.fw?u:1-u,pt=qpt(A,B,c,uu);ctx.globalAlpha=k?.5*(1-k/6):1;ctx.fillStyle=acc2;ctx.beginPath();ctx.arc(pt.x,pt.y,k?3.4-k*.4:3.8,0,6.283);ctx.fill()}ctx.shadowBlur=0}
+   else{if(!p.hit){p.hit=1;if(by[p.dst].kind==='skill')lit[p.dst]=now+30000}var ar=(age-p.dur)/900;if(ar<1){ctx.globalAlpha=.7*(1-ar);ctx.strokeStyle=acc2;ctx.lineWidth=2;ctx.beginPath();ctx.arc(d.x,d.y,rad(by[p.dst])+2+ar*14,0,6.283);ctx.stroke()}}});
+  ctx.globalAlpha=1;cv.style.cursor=hov&&hov.to?'pointer':'default';
+  if(hov&&hov.cap&&o>=.2){var q=PA[hov.id];tipEl.innerHTML='<b>'+esc(hov.label)+'</b><span>'+esc(hov.cap)+'</span>';
+   var tw=tipEl.offsetWidth||200,th=tipEl.offsetHeight||50,left=q.x<W/2,x=left?q.x+16:q.x-tw-16,y=q.y-th/2;if(x<8||x+tw>W-8){x=Math.max(8,Math.min(W-8-tw,q.x-tw/2));y=q.y<rect.y?q.y+18:q.y-th-18}if(y<8)y=8;if(y+th>H-8)y=H-8-th;tipEl.style.left=Math.max(8,x)+'px';tipEl.style.top=y+'px';tipEl.style.opacity=1}else tipEl.style.opacity=0}
+ cfg.host.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});cfg.host.addEventListener('mouseleave',function(){mouse.x=mouse.y=-999});
+ cv.addEventListener('touchstart',function(e){var r=cv.getBoundingClientRect(),t=e.touches[0];mouse.x=t.clientX-r.left;mouse.y=t.clientY-r.top},{passive:true});
+ cv.addEventListener('click',function(){if(hov&&hov.to){var t=document.querySelector(hov.to);if(t){if(t.tagName==='DETAILS')t.open=true;t.scrollIntoView({behavior:'smooth'})}}});
+ return {layout:layout,draw:draw,pos:function(id){return PA[id]},hoverAt:function(id){mouse.x=PA[id].x;mouse.y=PA[id].y},info:function(){return rect}}}
+/* ---- the intro map: static, words only on roles and projects, fades as the page scrolls ---- */
+var hero=document.getElementById('top'),ctr=hero.querySelector('.center'),fadeW=1;
+var H1=makeNet({cv:document.getElementById('net'),host:hero,center:ctr,tip:document.getElementById('tip'),labelsAll:false,pulses:false,
+ opacity:function(){return fadeW*(1-clamp((window.scrollY-50)/(hero.offsetHeight*.5)))}});
+function heroLayout(){hero.style.height='';var cr0=ctr.getBoundingClientRect();fadeW=clamp(((window.innerWidth-cr0.width)/2-125)/105);var ch=cr0.height,full=Math.max(700,ch+330),lean=ch+150;hero.style.height=(lean+(full-lean)*fadeW)+'px';H1.layout()}
+/* ---- the same map on its own, pulses running, every word shown, legend in the middle ---- */
+var NS=document.getElementById('netsec');
+var H2=makeNet({cv:document.getElementById('net2'),host:NS,center:document.getElementById('lgbox'),tip:document.getElementById('tip2'),labelsAll:true,pulses:true,
+ opacity:function(){var r=NS.getBoundingClientRect();return clamp((window.innerHeight-r.top)/(window.innerHeight*.5))},
+ active:function(){var r=NS.getBoundingClientRect();return r.top<window.innerHeight*.85&&r.bottom>window.innerHeight*.15}});
+function loop(){var now=performance.now();H1.draw(now);H2.draw(now);requestAnimationFrame(loop)}
+/* ---- impact results: theme filter and click-to-open cards ---- */
+(function(){var cards=[].slice.call(document.querySelectorAll('#rcards .card'));
+ function tog(c){var o=c.getAttribute('aria-expanded')==='true';cards.forEach(function(x){x.setAttribute('aria-expanded','false')});c.setAttribute('aria-expanded',!o)}
+ cards.forEach(function(c){c.addEventListener('click',function(){tog(c)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tog(c)}})});
+ document.querySelectorAll('#rchips button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#rchips button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});var f=b.dataset.f;cards.forEach(function(c){c.classList.toggle('dim',!!f&&c.dataset.t.split(' ').indexOf(f)<0)})})});
 })();
-</script>
-<noscript><p style="text-align:center;color:#475569">This page is more interactive with JavaScript turned on, but all of the content is readable without it.</p></noscript>
-<script data-goatcounter="https://krisrchesney.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</body>
-</html>
+/* ---- career timeline: Work gets room for labels, Military and Education stay thin ---- */
+(function(){var svg=document.getElementById('tl');if(!svg)return;var chart=document.getElementById('tlchart'),tip=document.getElementById('tltip'),range=[2005,2027],
+ FILL={ent:'acc',sec:'acc2',sys:'mu',mil:'mu',edu:'bg'};
+ function showTip(it,e){tip.innerHTML='<b>'+it.title+'</b><span>'+it.org+' &middot; '+it.dates+'</span><p>'+it.blurb+'</p>';tip.style.opacity=1;moveTip(e)}
+ function moveTip(e){var w=tip.offsetWidth||260,h=tip.offsetHeight||90,x=Math.min(innerWidth-w-10,e.clientX+14),y=e.clientY+16;if(y+h>innerHeight-10)y=e.clientY-h-12;tip.style.left=Math.max(8,x)+'px';tip.style.top=y+'px'}
+ /* one group per employer or school, so a run of promotions reads as one block with dividers */
+ function groups(){var g={};ITEMS.forEach(function(it,k){if(it.e<=range[0]||it.s>=range[1])return;(g[it.org]=g[it.org]||[]).push(k)});
+  return Object.keys(g).map(function(o){var ks=g[o].sort(function(a,b){return ITEMS[a].s-ITEMS[b].s}),its=ks.map(function(k){return ITEMS[k]});return {org:o,short:/^New Mexico/.test(o)?'BIGDatA REU':o.split(',')[0],ks:ks,lane:its[its.length-1].lane,s:its[0].s,e:Math.max.apply(null,its.map(function(i){return i.e}))}})}
+ window.drawTL=function(){var Wd=Math.max(chart.clientWidth-24,820),L=84,R=16,T=18,x=function(t){return L+(t-range[0])/(range[1]-range[0])*(Wd-L-R)},F='Figtree,sans-serif';
+  var TR=[{n:'Work',lanes:['ent','sec','sys'],h:98,bh:24},{n:'Military',lanes:['mil'],h:20,bh:7},{n:'Education',lanes:['edu'],h:20,bh:7}];
+  var Hd=T+TR.reduce(function(a,t){return a+t.h},0)+4,ink=css('--ink'),acc=css('--accent'),acc2=css('--accent2'),rule=css('--rule'),mu=css('--muted'),bg=css('--bg'),C={acc:acc,acc2:acc2,mu:mu,bg:bg},o='',step=(range[1]-range[0])>12?5:(range[1]-range[0])>5?2:1;
+  svg.setAttribute('viewBox','0 0 '+Wd+' '+Hd);svg.setAttribute('height',Hd);svg.style.minWidth=Wd+'px';
+  var m=document.createElement('canvas').getContext('2d');m.font='700 11px Figtree,sans-serif';function tw(s){return m.measureText(s).width}
+  for(var y=Math.ceil(range[0]/step)*step;y<=range[1];y+=step)o+='<line x1="'+x(y)+'" x2="'+x(y)+'" y1="14" y2="'+Hd+'" stroke="'+rule+'"/><text x="'+x(y)+'" y="10" text-anchor="middle" font-size="11" fill="'+mu+'" font-family="'+F+'">'+y+'</text>';
+  var gs=groups(),ty=T;
+  TR.forEach(function(tr,ti){var mine=gs.filter(function(g){return tr.lanes.indexOf(g.lane)>=0}),by=ty+(tr.h-tr.bh)/2,mid=ty+tr.h/2,occ=[],rects=[];
+   o+='<text x="0" y="'+(mid+4)+'" font-size="11" font-weight="700" fill="'+ink+'" font-family="'+F+'">'+tr.n+'</text>';
+   if(ti)o+='<line x1="0" x2="'+Wd+'" y1="'+ty+'" y2="'+ty+'" stroke="'+rule+'" stroke-dasharray="2 4"/>';
+   mine.forEach(function(g){g.X1=Math.max(L,x(g.s));g.X2=Math.min(Wd-R,x(g.e));rects.push(g)});
+   function clash(a,b,lv,self){return occ.some(function(p){return p.lv===lv&&a-6<p.b&&b+6>p.a})||(lv==='side'&&rects.some(function(r){return r!==self&&a<r.X2+3&&b>r.X1-3}))}
+   mine.forEach(function(g){var fill=C[FILL[g.lane]],edu=g.lane==='edu',lab=tr.n==='Work'?g.short:ITEMS[g.ks[g.ks.length-1]].label,w=tw(lab),cx=(g.X1+g.X2)/2,op=(g.lane==='mil'||g.lane==='sys')?.6:1;
+    o+='<g>';
+    g.ks.forEach(function(k){var it=ITEMS[k],x1=Math.max(L,x(it.s)),x2=Math.min(Wd-R,x(it.e));if(x2<=x1)return;
+     o+='<g class="bar" data-k="'+k+'"><rect x="'+x1+'" y="'+(mid-9)+'" width="'+Math.max(3,x2-x1)+'" height="18" fill="transparent"/><rect x="'+(x1+.75)+'" y="'+by+'" width="'+Math.max(3,x2-x1-1.5)+'" height="'+tr.bh+'" rx="'+Math.min(5,tr.bh/2)+'" fill="'+(edu?bg:fill)+'" opacity="'+op+'" stroke="'+(edu?ink:'none')+'" stroke-width="1"/></g>'});
+    var bs=g.ks.map(function(k){return [Math.max(L,x(ITEMS[k].s)),Math.min(Wd-R,x(ITEMS[k].e))]}).sort(function(p,q){return (q[1]-q[0])-(p[1]-p[0])})[0];
+    if(tr.bh>=14&&w+14<=bs[1]-bs[0]){o+='<text x="'+(bs[0]+(bs[1]-bs[0])/2)+'" y="'+(mid+4)+'" text-anchor="middle" font-size="11.5" font-weight="700" pointer-events="none" fill="'+bg+'" font-family="'+F+'">'+lab+'</text>';return o+='</g>'}
+    if(tr.n==='Work'){var cl=Math.max(L+w/2,Math.min(Wd-R-w/2,cx)),a=cl-w/2,b=cl+w/2,pl=null,LV=[['above',by-8],['below',by+tr.bh+15],['above2',by-24],['below2',by+tr.bh+31]];
+     LV.some(function(l){if(!clash(a,b,l[0])){pl=l;return true}});if(!pl)pl=LV.slice().sort(function(p,q){return occ.filter(function(z){return z.lv===p[0]}).length-occ.filter(function(z){return z.lv===q[0]}).length})[0];
+     occ.push({lv:pl[0],a:a,b:b});var up=/^above/.test(pl[0]),lx=Math.max(g.X1+4,Math.min(g.X2-4,cx));o+='<line x1="'+lx+'" x2="'+lx+'" y1="'+(up?by:by+tr.bh)+'" y2="'+(up?pl[1]+3:pl[1]-11)+'" stroke="'+mu+'" stroke-width="1" opacity=".6" pointer-events="none"/>'
+     o+='<text x="'+cl+'" y="'+pl[1]+'" text-anchor="middle" font-size="11" font-weight="700" fill="'+ink+'" pointer-events="none" font-family="'+F+'">'+lab+'</text>'}
+    else{var sides=[['start',g.X2+6,g.X2+6,g.X2+6+w],['end',g.X1-6,g.X1-6-w,g.X1-6]];sides.some(function(s){if(s[2]<L-2||s[3]>Wd-R||clash(s[2],s[3],'side',g))return false;occ.push({lv:'side',a:s[2],b:s[3]});o+='<text x="'+s[1]+'" y="'+(mid+4)+'" text-anchor="'+s[0]+'" font-size="10.5" font-weight="700" fill="'+ink+'" pointer-events="none" font-family="'+F+'">'+lab+'</text>';return true})}
+    o+='</g>'});
+   ty+=tr.h});
+  svg.innerHTML=o;svg.querySelectorAll('.bar').forEach(function(g){var it=ITEMS[+g.dataset.k];g.addEventListener('mouseenter',function(e){showTip(it,e)});g.addEventListener('mousemove',moveTip);g.addEventListener('mouseleave',function(){tip.style.opacity=0})})};
+ document.querySelectorAll('#zoom button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#zoom button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});range=b.dataset.r.split(',').map(Number);drawTL()})});
+ window.addEventListener('resize',drawTL)})();
+if(!window.drawTL)window.drawTL=function(){};
+/* ---- theme, links ---- */
+var root=document.documentElement,mb=document.getElementById('mode'),swEl=document.getElementById('sw'),cc=document.getElementById('cc');
+function theme(){var c=PAL[st.pal][st.mode==='dark'?'d':'l'];root.style.setProperty('--bg',c[0]);root.style.setProperty('--ink',c[1]);root.style.setProperty('--accent',st.accent||c[2]);root.style.setProperty('--accent2',c[3]);mb.textContent=st.mode==='dark'?'☀':'☾';mb.title=mb.ariaLabel=st.mode==='dark'?'Switch to light mode':'Switch to dark mode';if(cc)cc.value=(st.accent||c[2]);drawTL()}
+if(swEl)Object.keys(PAL).forEach(function(k){var b=document.createElement('button');b.title=k;b.style.setProperty('--c1',PAL[k].l[2]);b.style.setProperty('--c2',PAL[k].l[3]);b.addEventListener('click',function(){st.pal=k;st.accent=null;theme()});swEl.appendChild(b)});
+if(cc)cc.addEventListener('input',function(e){st.accent=e.target.value;theme()});
+mb.addEventListener('click',function(){st.mode=st.mode==='dark'?'light':'dark';try{localStorage.setItem('theme',st.mode)}catch(e){}theme()});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href').slice(1);if(!id||id==='top'){return}var t=document.getElementById(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+var ml=document.getElementById('mail');ml.addEventListener('click',function(e){e.preventDefault();var a=['kris.r.chesney','gmail.com'].join('@');ml.textContent=a;ml.href='mailto:'+a},{once:true});
+document.querySelectorAll('a.mail').forEach(function(m){m.addEventListener('click',function(e){e.preventDefault();document.getElementById('contact').scrollIntoView({behavior:'smooth'})})});
+function layoutAll(){heroLayout();H2.layout()}
+window.addEventListener('resize',layoutAll);
+var q=location.search;st.mode='dark';try{var sv=localStorage.getItem('theme');if(sv==='light'||sv==='dark')st.mode=sv}catch(e){}if(/[?&]dark=0/.test(q))st.mode='light';if(/[?&]dark=1/.test(q))st.mode='dark';
+var qp=/[?&]pal=(\d)/.exec(q);if(qp)st.pal=Object.keys(PAL)[+qp[1]];
+theme();(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){layoutAll();loop();
+ var qh=/[?&]h=(\w+)/.exec(q);if(qh)setTimeout(function(){H1.hoverAt(qh[1])},80);
+ var qg=/[?&]at=(\w+)/.exec(q);if(qg)setTimeout(function(){var t=document.getElementById(qg[1]);if(t)window.scrollTo(0,t.getBoundingClientRect().top+window.scrollY-(/[?&]off=(\d+)/.exec(q)||[0,0])[1])},120)});
+</script><script data-goatcounter="https://krisrchesney.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>
