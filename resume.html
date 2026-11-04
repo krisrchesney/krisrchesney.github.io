@@ -6,7 +6,7 @@
 <meta property="og:description" content="Systems, data, and applied AI. Interactive resume with a career timeline.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0e141d">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e141d'/%3E%3Ccircle cx='32' cy='32' r='25' fill='none' stroke='%23e4e9f0' stroke-width='4'/%3E%3Ctext x='32' y='39' font-family='Arial' font-weight='700' font-size='20' text-anchor='middle' fill='%23e3a35f'%3EKC%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e141d'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='700' font-size='30' text-anchor='middle' fill='%23e3a35f'%3EKC%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Figtree:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -140,7 +140,7 @@ footer{margin:60px 0 50px;padding-top:20px;border-top:1px solid var(--rule);colo
 .nlg p{display:flex;gap:14px;align-items:center;margin:0 0 14px;min-width:170px}
 .k{flex:none;width:30px;display:flex;justify-content:center;position:relative}.k::before{content:"";display:block}
 .k-role::before{width:18px;height:18px;border-radius:50%;background:var(--accent2)}.k-proj::before{width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--ink)}.k-skill::before{width:9px;height:9px;border-radius:50%;background:var(--muted)}
-.k-link::before{width:30px;height:2px;background:color-mix(in srgb,var(--ink) 35%,transparent);margin:8px 0}.k-link::after{content:"";position:absolute;top:50%;left:0;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--accent2);box-shadow:0 0 8px var(--accent2);animation:klink 2.4s ease-in-out infinite}
+.k-link::before{width:30px;height:2px;background:color-mix(in srgb,var(--ink) 35%,transparent);margin:8px 0}.k-link::after{content:"";position:absolute;top:50%;left:0;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:klink 2.4s ease-in-out infinite}
 @keyframes klink{0%{left:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:23px;opacity:0}}@media(prefers-reduced-motion:reduce){.k-link::after{animation:none;left:11px}}
 @media(max-width:759px){.netsec{height:auto;padding:40px 16px}.vizwrap{display:none}.nlg{position:relative;left:auto;top:auto;transform:none;margin:0 auto}}
 </style></head><body data-h="1" data-i="1" data-t="1" data-p="1">
@@ -229,8 +229,8 @@ function draw(now){var t=prog(),r=cv.getBoundingClientRect(),o=Math.max(fadeW,cl
  pulses.forEach(function(p){var age=now-p.t0,e=E[p.ei];if(!e||age<0)return;var s=PA[p.src],d=PA[p.dst];if(!s||!d)return;var A=PA[e[0]],B=PA[e[1]],rl=p.slow?1500:700;
   var sr=by[p.src].kind==='role'?10:by[p.src].kind==='proj'?7:4.4,dr=by[p.dst].kind==='role'?10:by[p.dst].kind==='proj'?7:4.4;
   if(age<rl){ctx.globalAlpha=.55*(1-age/rl);ctx.strokeStyle=acc2;ctx.lineWidth=2;ctx.beginPath();ctx.arc(s.x,s.y,sr+2+age/rl*22,0,6.283);ctx.stroke()}
-  if(age<p.dur){var u0=.5-.5*Math.cos(Math.PI*age/p.dur);ctx.shadowColor=acc2;ctx.shadowBlur=14;
-   for(var k=5;k>=0;k--){var u=Math.max(0,u0-k*.022),uu=p.fw?u:1-u,pt=qpt(A,B,c,uu);ctx.globalAlpha=k?.5*(1-k/6):1;ctx.fillStyle=acc2;ctx.beginPath();ctx.arc(pt.x,pt.y,k?3.4-k*.4:3.8,0,6.283);ctx.fill()}ctx.shadowBlur=0}
+  if(age<p.dur){var u0=.5-.5*Math.cos(Math.PI*age/p.dur);var dc=a?acc2:acc;ctx.shadowColor=dc;ctx.shadowBlur=14;
+   for(var k=5;k>=0;k--){var u=Math.max(0,u0-k*.022),uu=p.fw?u:1-u,pt=qpt(A,B,c,uu);ctx.globalAlpha=k?.5*(1-k/6):1;ctx.fillStyle=dc;ctx.beginPath();ctx.arc(pt.x,pt.y,k?3.4-k*.4:3.8,0,6.283);ctx.fill()}ctx.shadowBlur=0}
   else{if(!p.hit){p.hit=1;glow[p.dst]={on:true,rel:0}}var ar=(age-p.dur)/900;if(ar<1){ctx.globalAlpha=.7*(1-ar);ctx.strokeStyle=acc2;ctx.lineWidth=2;ctx.beginPath();ctx.arc(d.x,d.y,dr+2+ar*14,0,6.283);ctx.stroke()}}});
  ctx.globalAlpha=1;document.body.style.cursor=hov&&hov.to?'pointer':'';
  if(hov&&hov.cap&&o>=.2){var q=PA[hov.id];tipEl.innerHTML='<b>'+esc(hov.label)+'</b><span>'+esc(hov.cap)+'</span>';
