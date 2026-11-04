@@ -126,7 +126,7 @@ dl{display:grid;grid-template-columns:140px 1fr;gap:6px 20px;font-size:16.5px}dt
 .certs{color:var(--muted);padding-left:1.1em}
 footer{margin:60px 0 50px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:15px}
 @media(max-width:1099px){h1{font-size:32px}.center p{font-size:16.5px}.center{width:min(560px,70vw)}}
-@media(max-width:759px){.hero .center{width:92vw}.hero{min-height:0;padding:64px 0 40px}}
+@media(max-width:759px){.hero .center{width:92vw;position:relative;left:auto;top:auto;transform:none;margin:0 auto}.hero{min-height:0;padding:40px 0 24px}}
 @media(max-width:759px){.ctl{position:static;flex-direction:column;align-items:stretch;gap:6px;padding:8px 10px}.ctl>*{min-width:0;max-width:100%}.ctl .tabs,.ctl .sp{display:flex;gap:6px;overflow-x:auto;white-space:nowrap;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:2px}.ctl .sp{margin-left:0}.ctl .tab{flex:0 0 auto;min-height:36px;padding:7px 14px}.ln{display:none}.sh{display:inline}.ctl .seg,.ctl .sw,.ctl label,.ctl .mode{flex:0 0 auto}.sw button{width:26px;height:26px}.seg button,.mode{min-height:34px}}
 @media(max-width:700px){.tllist li{grid-template-columns:1fr}.tllist .go{justify-self:start}h1{font-size:30px}.role summary{grid-template-columns:1fr 18px}.role summary .when{grid-column:1}.role summary .rt{grid-column:1}.role ul{padding-left:1.1em}.r .more{margin-left:0}.earlier li,dl{grid-template-columns:1fr}.tags{display:none}.nav{padding:10px 16px;gap:2px 16px;font-size:13px}.ln2{gap:2px 14px}}
 .gs{display:inline-flex;align-items:center;gap:6px;margin-right:8px}.gs em{font:700 11px Figtree,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-style:normal}
@@ -142,9 +142,9 @@ footer{margin:60px 0 50px;padding-top:20px;border-top:1px solid var(--rule);colo
 .k-role::before{width:18px;height:18px;border-radius:50%;background:var(--accent2)}.k-proj::before{width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--ink)}.k-skill::before{width:9px;height:9px;border-radius:50%;background:var(--muted)}
 .k-link::before{width:30px;height:2px;background:color-mix(in srgb,var(--ink) 35%,transparent);margin:8px 0}.k-link::after{content:"";position:absolute;top:50%;left:0;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:klink 2.4s ease-in-out infinite}
 @keyframes klink{0%{left:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:23px;opacity:0}}@media(prefers-reduced-motion:reduce){.k-link::after{animation:none;left:11px}}
-@media(max-width:759px){.netsec{height:auto;padding:40px 16px}.vizwrap{display:none}.nlg{position:relative;left:auto;top:auto;transform:none;margin:0 auto}}
+@media(max-width:759px){.vizwrap{position:relative;top:auto;grid-area:2/1}.nlg::before{inset:-60px -70px}.nlg p{min-width:0}}
 </style></head><body data-h="1" data-i="1" data-t="1" data-p="1">
-<nav class="nav"><span class="nmw"><a class="nm" href="#top"><i class="kc">KC</i>Kristopher Chesney</a><a class="open" href="#contact">Open to new opportunities</a><button class="mode" id="mode" type="button"></button></span><span class="ln2"><a href="#top">Summary</a><a href="#results">Impact Results</a><a href="#timeline">Timeline</a><a href="#experience">Experience</a><a href="#projects">Personal Projects</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a></span></nav><div class="mapstage"><div class="vizwrap" id="vizwrap"><canvas id="net" aria-label="Map of my roles, projects and the tools they use"></canvas><div class="tip" id="tip"></div></div>
+<nav class="nav"><span class="nmw"><a class="nm" href="#top"><i class="kc">KC</i>Kristopher Chesney</a><button class="mode" id="mode" type="button"></button></span><span class="ln2"><a href="#top">Summary</a><a href="#results">Impact Results</a><a href="#timeline">Timeline</a><a href="#experience">Experience</a><a href="#projects">Personal Projects</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#contact">Contact</a></span></nav><div class="mapstage"><div class="vizwrap" id="vizwrap"><canvas id="net" aria-label="Map of my roles, projects and the tools they use"></canvas><div class="tip" id="tip"></div></div>
 <header class="hero" id="top"><div class="center"><span class="logo">KRISTOPHER&ensp;CHESNEY</span><hr>
 <h1>Technology Leader<br><span class="acc">Systems, Data, and Applied AI</span></h1>
 <p>Technology leader with 20+ years across data science, security analytics, IT operations and systems administration. Leads teams and delivers work across the business, from infrastructure and identity to data and analytics. Proficient at building code and developing workflows using AI tools. Excels at setting and executing strategy.</p>
@@ -187,11 +187,14 @@ function place(cx,cy,Rx,Ry){var p={_c:[cx,cy]};p.aug={x:cx-Rx,y:cy,k:0};p.pro={x
 /* one map on one canvas: it stays put on screen while the intro scrolls away, words and pulses come in, then it settles in the legend section */
 var hero=document.getElementById('top'),ctr=hero.querySelector('.center'),nav=document.querySelector('.nav'),wrap=document.getElementById('vizwrap'),lgb=document.getElementById('lgbox'),fadeW=1,SH=760;
 var cv=document.getElementById('net'),ctx=cv.getContext('2d'),tipEl=document.getElementById('tip'),W=0,H=0,dpr=Math.min(2,window.devicePixelRatio||1),PA={_c:[0,0]},rect={x:0,y:0,w:0,h:0},mouse={x:-999,y:-999},hov=null,hsrc=null,pulses=[],bag=[],glow={},nextPulse=0,nextHover=0,hdone=false,lastSrc=null;
-function prog(){return clamp(window.scrollY/Math.max(1,hero.offsetHeight))}
+function small(){return window.innerWidth<760}
+function prog(){return small()?1:clamp(window.scrollY/Math.max(1,hero.offsetHeight))}
 function layout(cr0){var r=cv.getBoundingClientRect();if(!r.width||!r.height){W=0;return}W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+ if(small()){rect={x:W/2,y:H/2,w:lgb.offsetWidth/2+20,h:lgb.offsetHeight/2+20};PA=place(rect.x,rect.y,Math.max(rect.w+30,W/2-18),Math.max(rect.h+30,H/2-18));return}
  rect={x:W/2,y:H/2,w:Math.max(cr0.width,lgb.offsetWidth)/2+34,h:Math.max(cr0.height,lgb.offsetHeight)/2+28};
  var Rx=Math.max(rect.w+70,Math.min(W/2-95,600)),Ry=Math.max(rect.h+70,H/2-80);PA=place(rect.x,rect.y,Rx,Ry)}
 function layoutAll(){var nh=nav.offsetHeight,rs=document.documentElement.style;SH=Math.max(600,Math.min(760,window.innerHeight-nh));rs.setProperty('--nh',nh+'px');rs.setProperty('--sh',SH+'px');
+ if(small()){SH=Math.round(Math.max(440,Math.min(580,window.innerWidth*1.25)));rs.setProperty('--sh',SH+'px');hero.style.height='';fadeW=1;layout(ctr.getBoundingClientRect());return}
  hero.style.height='';var cr0=ctr.getBoundingClientRect();fadeW=clamp(((window.innerWidth-cr0.width)/2-125)/105);var ch=cr0.height,full=Math.max(SH,ch+330),lean=ch+150;hero.style.height=(lean+(full-lean)*fadeW)+'px';layout(cr0)}
 /* a node glows from the moment a link starts from it (or reaches it) until the next link starts, then the glow fades quickly */
 function release(now){Object.keys(glow).forEach(function(k){if(glow[k].on){glow[k].on=false;glow[k].rel=now}})}
@@ -208,7 +211,7 @@ function lab(n,p,r){var cx=PA._c[0],cy=PA._c[1],ang=Math.atan2(p.y-cy,p.x-cx),c=
  if(n.kind==='role')return {x:p.x,y:p.y+r+20,al:'center'};
  if(Math.abs(c)<.4){var ex=(p.k%2)*14;return {x:p.x,y:s<0?p.y-r-8-ex:p.y+r+17+ex,al:'center'}}
  return {x:p.x+c*(r+9),y:p.y+s*(r+9)+4,al:c>0?'left':'right'}}
-function draw(now){var t=prog(),r=cv.getBoundingClientRect(),o=Math.max(fadeW,clamp((t-.25)/.5)),la=clamp((t-.5)/.42),vis=W&&r.bottom>0&&r.top<window.innerHeight;cv.style.opacity=o;
+function draw(now){var t=prog(),r=cv.getBoundingClientRect(),o=Math.max(fadeW,clamp((t-.25)/.5)),la=small()?0:clamp((t-.5)/.42),vis=W&&r.bottom>0&&r.top<window.innerHeight;cv.style.opacity=o;
  if(!vis||o<=.01){if(W)ctx.clearRect(0,0,W,H);tipEl.style.opacity=0;hov=null;return}
  var ink=css('--ink'),acc=css('--accent'),acc2=css('--accent2'),bg=css('--bg'),mu=css('--muted');ctx.clearRect(0,0,W,H);
  hov=null;if(mouse.ok&&o>=.2){var mx=mouse.x-r.left,my=mouse.y-r.top,best=22;N.forEach(function(n){var p=PA[n.id],d=Math.hypot(p.x-mx,p.y-my);if(d<best){best=d;hov=n}})}
@@ -238,7 +241,7 @@ function draw(now){var t=prog(),r=cv.getBoundingClientRect(),o=Math.max(fadeW,cl
 /* the canvas sits under the page text, so the pointer is read from the window */
 window.addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;mouse.ok=!e.target.closest||!e.target.closest('.nav,.center,.nlg')});
 document.documentElement.addEventListener('mouseleave',function(){mouse.ok=false});
-window.addEventListener('click',function(e){if(hov&&hov.to&&!(e.target.closest&&e.target.closest('a,button,summary,.nav'))){var tg=document.querySelector(hov.to);if(tg){if(tg.tagName==='DETAILS')tg.open=true;tg.scrollIntoView({behavior:'smooth'})}}});
+var tapped=null;window.addEventListener('click',function(e){if(small()&&hov&&hov.to&&tapped!==hov.id){tapped=hov.id;return}if(hov&&hov.to&&!(e.target.closest&&e.target.closest('a,button,summary,.nav'))){var tg=document.querySelector(hov.to);if(tg){if(tg.tagName==='DETAILS')tg.open=true;tg.scrollIntoView({behavior:'smooth'})}}});
 function hoverAt(id){var r=cv.getBoundingClientRect();mouse.x=r.left+PA[id].x;mouse.y=r.top+PA[id].y;mouse.ok=true}
 function loop(){draw(performance.now());requestAnimationFrame(loop)}
 /* ---- impact results: theme filter and click-to-open cards ---- */
